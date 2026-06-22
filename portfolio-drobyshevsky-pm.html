@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дмитрий Дробышевский — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Unbounded:wght@200;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a08;
+    --surface: #111110;
+    --surface2: #1a1a17;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --text: #f0ece0;
+    --text-muted: #8a8778;
+    --text-dim: #5a5850;
+    --accent: #d4552a;
+    --border: rgba(201,168,76,0.2);
+    --border-dim: rgba(201,168,76,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* LANG TOGGLE */
+  .lang-toggle {
+    position: fixed;
+    top: 28px; right: 36px;
+    z-index: 100;
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  .lang-btn {
+    background: rgba(10,10,8,0.8);
+    color: var(--text-muted);
+    border: none;
+    padding: 7px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lang-btn.active { background: var(--gold); color: var(--bg); }
+  .lang-btn:hover:not(.active) { color: var(--gold); }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.5;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .hero-left {
+    padding: 120px 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 200;
+    font-size: clamp(36px, 5vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-top: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-name span { display: block; font-weight: 700; color: var(--gold); font-style: italic; }
+  .hero-title {
+    font-size: 22px;
+    font-style: italic;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-tagline {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 400px;
+    margin-top: 40px;
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 60px;
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+  .stat-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 36px;
+    font-weight: 200;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .hero-right { position: relative; overflow: hidden; }
+  .hero-right-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 60% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-circle {
+    position: absolute;
+    width: 420px; height: 420px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateSlow 30s linear infinite;
+  }
+  .hero-circle::before {
+    content: '';
+    position: absolute;
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: -4px; left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px var(--gold);
+  }
+  .hero-circle-2 {
+    width: 280px; height: 280px;
+    border-color: rgba(201,168,76,0.08);
+    animation-duration: 20s;
+    animation-direction: reverse;
+  }
+  .hero-circle-3 {
+    width: 560px; height: 560px;
+    border-color: rgba(201,168,76,0.04);
+    animation-duration: 50s;
+  }
+  .hero-icon-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .pm-badge {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    letter-spacing: 0.15em;
+  }
+  .hero-icon-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,10,8,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-dim);
+    padding: 0 60px;
+    display: flex;
+  }
+  .nav-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 20px 24px;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 24px; right: 24px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .nav-link:hover { color: var(--gold); }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* SECTIONS */
+  section { padding: 120px 60px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.1em; }
+  .section-title { font-family: 'Unbounded', sans-serif; font-weight: 200; font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.02em; }
+  .section-line { flex: 1; height: 1px; background: var(--border-dim); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .about-text { font-size: 19px; line-height: 1.85; color: var(--text-muted); }
+  .about-text p + p { margin-top: 24px; }
+  .about-text em { color: var(--gold); font-style: italic; }
+
+  .skills-category { margin-bottom: 36px; }
+  .skills-cat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .skill-tag:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+  .skill-tag.highlight { border-color: var(--gold); color: var(--gold); }
+
+  /* SERVICES — новый блок */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--surface);
+    padding: 40px 36px;
+    border: 1px solid var(--border-dim);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .service-card:hover { background: var(--surface2); border-color: var(--border); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .service-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .service-text { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+
+  /* CASES */
+  .cases-list { display: flex; flex-direction: column; gap: 2px; }
+  .case-item {
+    border: 1px solid var(--border-dim);
+    background: var(--surface);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transition: transform 0.4s;
+    transform-origin: bottom;
+  }
+  .case-item:hover { background: var(--surface2); border-color: var(--border); }
+  .case-item:hover::before { transform: scaleY(1); }
+  .case-header {
+    padding: 40px 48px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 32px;
+    align-items: center;
+  }
+  .case-num { font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 200; color: var(--text-dim); letter-spacing: 0.1em; }
+  .case-company { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+  .case-title { font-family: 'Unbounded', sans-serif; font-weight: 200; font-size: 22px; letter-spacing: -0.01em; }
+  .case-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .case-year { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 0.1em; }
+  .case-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--bg); background: var(--gold); padding: 3px 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .case-arrow { width: 24px; height: 24px; color: var(--text-dim); transition: transform 0.3s, color 0.3s; flex-shrink: 0; }
+  .case-item.open .case-arrow { transform: rotate(180deg); color: var(--gold); }
+  .case-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+  .case-item.open .case-body { max-height: 1200px; }
+  .case-content {
+    padding: 40px 48px 48px;
+    border-top: 1px solid var(--border-dim);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .case-description { font-size: 17px; line-height: 1.8; color: var(--text-muted); }
+  .case-description p + p { margin-top: 16px; }
+  .results-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 24px; }
+  .result-row { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-dim); }
+  .result-row:last-child { border-bottom: none; }
+  .result-num { font-family: 'Unbounded', sans-serif; font-weight: 200; font-size: 28px; color: var(--gold); line-height: 1; min-width: 80px; }
+  .result-text { font-size: 15px; color: var(--text-muted); line-height: 1.4; }
+  .tools-used { margin-top: 32px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tool-chip { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--text-dim); border: 1px solid var(--border-dim); padding: 4px 10px; }
+
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .process-step { background: var(--surface); padding: 40px 32px; transition: background 0.3s; }
+  .process-step:hover { background: var(--surface2); }
+  .process-step-num { font-family: 'Unbounded', sans-serif; font-size: 64px; font-weight: 200; color: var(--border); line-height: 1; margin-bottom: 20px; }
+  .process-step-title { font-family: 'Unbounded', sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 16px; text-transform: uppercase; }
+  .process-step-text { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+
+  /* CONTACT */
+  .contact-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-wrap::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    top: -100px; right: -100px;
+  }
+  .contact-headline { font-family: 'Unbounded', sans-serif; font-weight: 200; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.02em; line-height: 1.1; }
+  .contact-headline em { font-style: italic; color: var(--gold); }
+  .contact-links { display: flex; flex-direction: column; gap: 0; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 17px;
+    transition: color 0.3s;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-dim);
+  }
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { color: var(--gold); }
+  .contact-link-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .contact-link:hover .contact-link-icon { border-color: var(--gold); background: var(--gold-dim); }
+  .contact-link-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  footer {
+    border-top: 1px solid var(--border-dim);
+    padding: 32px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes rotateSlow { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  /* LANG */
+  [data-lang] { display: none; }
+  body.lang-ru [data-lang="ru"] { display: block; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-ru [data-lang-inline="ru"] { display: inline; }
+  body.lang-en [data-lang-inline="en"] { display: inline; }
+  [data-lang-inline] { display: none; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 100px 30px 60px; }
+    section { padding: 80px 30px; }
+    nav { padding: 0 30px; overflow-x: auto; }
+    .about-grid, .case-content, .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .contact-wrap { padding: 40px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px 30px; }
+    .lang-toggle { top: 16px; right: 16px; }
+    .case-header { grid-template-columns: auto 1fr auto; gap: 16px; padding: 24px; }
+    .case-meta { display: none; }
+    .case-content { padding: 24px; }
+  }
+</style>
+</head>
+<body class="lang-ru">
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('ru', event)">RU</button>
+  <button class="lang-btn" onclick="setLang('en', event)">EN</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div>
+      <p class="hero-eyebrow">
+        <span data-lang-inline="ru">Портфолио · Product Manager</span>
+        <span data-lang-inline="en">Portfolio · Product Manager</span>
+      </p>
+      <h1 class="hero-name">
+        Дмитрий<span>Дробышевский</span>
+      </h1>
+      <p class="hero-title">
+        <span data-lang-inline="ru">Product Manager · E-commerce</span>
+        <span data-lang-inline="en">Product Manager · E-commerce</span>
+      </p>
+      <p class="hero-tagline">
+        <span data-lang-inline="ru">Строю продукты, которые растут. Связываю бизнес-стратегию, пользовательский опыт и возможности команды — и превращаю это в измеримый результат.</span>
+        <span data-lang-inline="en">I build products that grow. Connecting business strategy, user experience, and team capability — turning it all into measurable outcomes.</span>
+      </p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label" data-lang="ru">Продукта</div>
+        <div class="stat-label" data-lang="en">Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2+</div>
+        <div class="stat-label" data-lang="ru">Года опыта</div>
+        <div class="stat-label" data-lang="en">Years exp.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">E-com</div>
+        <div class="stat-label" data-lang="ru">Фокус</div>
+        <div class="stat-label" data-lang="en">Focus</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-circle hero-circle-3"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle hero-circle-2"></div>
+    <div class="hero-icon-center">
+      <div class="pm-badge">PRODUCT MANAGER</div>
+      <div class="hero-icon-label">e-commerce · strategy</div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-link" href="#about"><span data-lang-inline="ru">Обо мне</span><span data-lang-inline="en">About</span></a>
+  <a class="nav-link" href="#services"><span data-lang-inline="ru">Услуги</span><span data-lang-inline="en">Services</span></a>
+  <a class="nav-link" href="#cases"><span data-lang-inline="ru">Кейсы</span><span data-lang-inline="en">Cases</span></a>
+  <a class="nav-link" href="#process"><span data-lang-inline="ru">Подход</span><span data-lang-inline="en">Process</span></a>
+  <a class="nav-link" href="#contact"><span data-lang-inline="ru">Контакт</span><span data-lang-inline="en">Contact</span></a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title"><span data-lang-inline="ru">Обо мне</span><span data-lang-inline="en">About</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <div data-lang="ru">
+        <p>Я Product Manager с фокусом на <em>e-commerce</em> и цифровые продукты. Работаю на пересечении бизнес-стратегии, пользовательского опыта и возможностей команды — и делаю так, чтобы все три вектора двигались в одну сторону.</p>
+        <p>Умею находить точку роста в продукте: через исследование рынка, глубинные интервью с пользователями и анализ данных формирую стратегию, которую команда способна реализовать, а бизнес — измерить.</p>
+        <p>Мой принцип — <em>стратегия без исполнения пуста, исполнение без стратегии слепо.</em> Поэтому слежу за целым: от позиционирования продукта до последнего спринта.</p>
+      </div>
+      <div data-lang="en">
+        <p>I'm a Product Manager focused on <em>e-commerce</em> and digital products. I work at the intersection of business strategy, user experience, and team capabilities — making sure all three vectors move in the same direction.</p>
+        <p>I find growth leverage in products: through market research, user interviews, and data analysis, I shape strategies that teams can execute and businesses can measure.</p>
+        <p>My principle: <em>strategy without execution is empty, execution without strategy is blind.</em> So I watch the whole picture — from product positioning to the last sprint.</p>
+      </div>
+    </div>
+    <div>
+      <div class="skills-category">
+        <div class="skills-cat-label"><span data-lang-inline="ru">Инструменты</span><span data-lang-inline="en">Tools</span></div>
+        <div class="skills-tags">
+          <span class="skill-tag highlight">Notion</span>
+          <span class="skill-tag highlight">Figma</span>
+          <span class="skill-tag highlight">Miro</span>
+          <span class="skill-tag highlight">Tilda</span>
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">Confluence</span>
+          <span class="skill-tag">MS Office</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Amplitude</span>
+          <span class="skill-tag">Hotjar</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <div class="skills-cat-label"><span data-lang-inline="ru">Фреймворки и методы</span><span data-lang-inline="en">Frameworks & Methods</span></div>
+        <div class="skills-tags">
+          <span class="skill-tag">JTBD</span>
+          <span class="skill-tag">OKR</span>
+          <span class="skill-tag">RICE / ICE</span>
+          <span class="skill-tag">CJM</span>
+          <span class="skill-tag">A/B Testing</span>
+          <span class="skill-tag">Go-to-Market</span>
+          <span class="skill-tag">North Star Metric</span>
+          <span class="skill-tag">Agile / Scrum</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <div class="skills-cat-label"><span data-lang-inline="ru">Зоны ответственности PM</span><span data-lang-inline="en">PM ownership areas</span></div>
+        <div class="skills-tags">
+          <span class="skill-tag">Product Strategy</span>
+          <span class="skill-tag">Roadmap</span>
+          <span class="skill-tag">Market Research</span>
+          <span class="skill-tag">Stakeholder Mgmt</span>
+          <span class="skill-tag">Go-to-Market</span>
+          <span class="skill-tag">UX Research</span>
+          <span class="skill-tag">Metrics & KPIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — новый блок для PM-фриланса -->
+<section id="services" style="background: var(--surface);">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title"><span data-lang-inline="ru">Чем могу помочь</span><span data-lang-inline="en">How I Can Help</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🔭</span>
+      <div class="service-title"><span data-lang-inline="ru">Product Discovery</span><span data-lang-inline="en">Product Discovery</span></div>
+      <div class="service-text" data-lang="ru">Исследование рынка и пользователей, формулировка Product Vision, выявление точек роста — прежде чем команда напишет первую строку кода.</div>
+      <div class="service-text" data-lang="en">Market and user research, Product Vision formulation, growth point identification — before the team writes the first line of code.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🗺️</span>
+      <div class="service-title"><span data-lang-inline="ru">Стратегия и роадмап</span><span data-lang-inline="en">Strategy & Roadmap</span></div>
+      <div class="service-text" data-lang="ru">Построение продуктовой стратегии с OKR, приоритизация инициатив по RICE, согласование роадмапа со стейкхолдерами разных уровней.</div>
+      <div class="service-text" data-lang="en">Building product strategy with OKR, prioritizing initiatives by RICE, aligning the roadmap with stakeholders at all levels.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚀</span>
+      <div class="service-title"><span data-lang-inline="ru">Go-to-Market</span><span data-lang-inline="en">Go-to-Market</span></div>
+      <div class="service-text" data-lang="ru">Разработка GTM-стратегии для запуска продукта или фичи: позиционирование, каналы, метрики успеха, план выхода на рынок.</div>
+      <div class="service-text" data-lang="en">Developing GTM strategy for a product or feature launch: positioning, channels, success metrics, market entry plan.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📐</span>
+      <div class="service-title"><span data-lang-inline="ru">Прототипирование MVP</span><span data-lang-inline="en">MVP Prototyping</span></div>
+      <div class="service-text" data-lang="ru">От пустого листа до кликабельного прототипа: CJM, пользовательские истории, wireframes в Figma, документация для разработки.</div>
+      <div class="service-text" data-lang="en">From blank page to clickable prototype: CJM, user stories, Figma wireframes, development documentation.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📊</span>
+      <div class="service-title"><span data-lang-inline="ru">Продуктовая аналитика</span><span data-lang-inline="en">Product Analytics</span></div>
+      <div class="service-text" data-lang="ru">Настройка системы метрик (North Star, KPI), анализ воронок, A/B тестирование, диагностика точек оттока и роста.</div>
+      <div class="service-text" data-lang="en">Setting up metrics systems (North Star, KPIs), funnel analysis, A/B testing, diagnosing drop-off and growth points.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🤝</span>
+      <div class="service-title"><span data-lang-inline="ru">Interim PM</span><span data-lang-inline="en">Interim PM</span></div>
+      <div class="service-text" data-lang="ru">Временное усиление команды: веду продукт от имени компании, пока вы ищете постоянного PM или закрываете пиковую нагрузку.</div>
+      <div class="service-text" data-lang="en">Temporary team augmentation: I manage the product on the company's behalf while you search for a permanent PM or cover peak load.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title"><span data-lang-inline="ru">Кейсы</span><span data-lang-inline="en">Case Studies</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cases-list">
+
+    <!-- CASE 1 -->
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <span class="case-num">01</span>
+        <div class="case-title-block">
+          <div class="case-company">«Погнали!»</div>
+          <div class="case-title">
+            <span data-lang-inline="ru">Discovery и прототип продукта с нуля</span>
+            <span data-lang-inline="en">Product Discovery & Prototype from Scratch</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <span class="case-year">2023</span>
+          <span class="case-tag"><span data-lang-inline="ru">Discovery</span><span data-lang-inline="en">Discovery</span></span>
+        </div>
+        <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div>
+            <div class="case-description">
+              <div data-lang="ru">
+                <p><strong style="color:var(--text)">Контекст:</strong> компания «Погнали!» обратилась с запросом на цифровой продукт — без чёткого понимания, что именно нужно рынку. Моей задачей как PM было не «взять ТЗ и делегировать», а сначала ответить на вопрос: <em>есть ли здесь проблема, стоящая решения?</em></p>
+                <p>Провёл серию глубинных интервью со стейкхолдерами и потенциальными пользователями. Выявил ключевые Jobs-to-be-Done, построил Customer Journey Map и сформулировал Problem Statement. На основе данных — а не предположений — собрал Product Vision и определил объём MVP.</p>
+                <p>Результат: кликабельный прототип в Figma с задокументированными пользовательскими историями, согласованный со всеми сторонами и готовый к передаче в разработку.</p>
+              </div>
+              <div data-lang="en">
+                <p><strong style="color:var(--text)">Context:</strong> «Погнали!» came with a digital product request — without a clear understanding of what the market actually needed. My job as PM wasn't to "take the spec and delegate," but first to answer: <em>is there a problem here worth solving?</em></p>
+                <p>I ran a series of in-depth interviews with stakeholders and potential users. Identified key Jobs-to-be-Done, built a Customer Journey Map, and formulated a Problem Statement. Based on data — not assumptions — I assembled a Product Vision and defined the MVP scope.</p>
+                <p>Outcome: a clickable Figma prototype with documented user stories, aligned with all stakeholders and ready for development handoff.</p>
+              </div>
+            </div>
+            <div class="tools-used">
+              <span class="tool-chip">Figma</span>
+              <span class="tool-chip">Miro</span>
+              <span class="tool-chip">Notion</span>
+              <span class="tool-chip">JTBD</span>
+              <span class="tool-chip">CJM</span>
+              <span class="tool-chip">CustDev</span>
+            </div>
+          </div>
+          <div>
+            <div class="results-label"><span data-lang-inline="ru">Результаты</span><span data-lang-inline="en">Outcomes</span></div>
+            <div class="result-row">
+              <div class="result-num">6</div>
+              <div class="result-text" data-lang="ru">глубинных интервью с пользователями и стейкхолдерами</div>
+              <div class="result-text" data-lang="en">in-depth interviews with users and stakeholders</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">MVP</div>
+              <div class="result-text" data-lang="ru">концепция согласована и передана в разработку</div>
+              <div class="result-text" data-lang="en">concept approved and handed off to development</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">2 нед</div>
+              <div class="result-text" data-lang="ru">от первого брифинга до согласованного прототипа</div>
+              <div class="result-text" data-lang="en">from first briefing to approved prototype</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <span class="case-num">02</span>
+        <div class="case-title-block">
+          <div class="case-company">E-commerce / Online Retail</div>
+          <div class="case-title">
+            <span data-lang-inline="ru">Рост конверсии через редизайн воронки покупки</span>
+            <span data-lang-inline="en">Conversion Growth via Purchase Funnel Redesign</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <span class="case-year">2024</span>
+          <span class="case-tag"><span data-lang-inline="ru">Рост</span><span data-lang-inline="en">Growth</span></span>
+        </div>
+        <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div>
+            <div class="case-description">
+              <div data-lang="ru">
+                <p><strong style="color:var(--text)">Контекст:</strong> онлайн-магазин терял ~68% пользователей на этапе оформления заказа. Задача была не просто «сделать покрасивее» — нужно было найти бизнес-причину отказов и устранить её.</p>
+                <p>Как PM я выстроил исследовательский цикл: данные из Google Analytics, сессионные записи в Hotjar, опрос 40 отказавшихся пользователей. Гипотеза подтвердилась: проблема была в когнитивной нагрузке формы доставки, а не в цене или доверии.</p>
+                <p>Сформулировал продуктовое решение, согласовал с дизайном и разработкой, провёл A/B тест. Продуктовое решение — сокращение шагов оформления с 4 до 2 и автозаполнение адреса. Изменения дали значимый прирост конверсии.</p>
+              </div>
+              <div data-lang="en">
+                <p><strong style="color:var(--text)">Context:</strong> an online store was losing ~68% of users at checkout. The task wasn't to "make it prettier" — I needed to find the business reason for dropoff and fix it.</p>
+                <p>As PM, I ran a research cycle: Google Analytics data, Hotjar session recordings, a survey of 40 users who abandoned. The hypothesis was confirmed: the issue was cognitive load on the delivery form, not price or trust.</p>
+                <p>I defined the product solution, aligned with design and engineering, and ran an A/B test. The fix — reducing checkout steps from 4 to 2 with address autocomplete — delivered a significant conversion lift.</p>
+              </div>
+            </div>
+            <div class="tools-used">
+              <span class="tool-chip">Google Analytics</span>
+              <span class="tool-chip">Amplitude</span>
+              <span class="tool-chip">Hotjar</span>
+              <span class="tool-chip">Figma</span>
+              <span class="tool-chip">Jira</span>
+              <span class="tool-chip">A/B Test</span>
+            </div>
+          </div>
+          <div>
+            <div class="results-label"><span data-lang-inline="ru">Результаты</span><span data-lang-inline="en">Outcomes</span></div>
+            <div class="result-row">
+              <div class="result-num">+23%</div>
+              <div class="result-text" data-lang="ru">рост конверсии в оплату по итогам A/B теста</div>
+              <div class="result-text" data-lang="en">conversion to payment lift after A/B test</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">−2</div>
+              <div class="result-text" data-lang="ru">лишних шага убрано из воронки без потери данных</div>
+              <div class="result-text" data-lang="en">redundant steps removed without data loss</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">4 нед</div>
+              <div class="result-text" data-lang="ru">от формулировки гипотезы до деплоя</div>
+              <div class="result-text" data-lang="en">from hypothesis to deployment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <span class="case-num">03</span>
+        <div class="case-title-block">
+          <div class="case-company">B2B SaaS / E-commerce Platform</div>
+          <div class="case-title">
+            <span data-lang-inline="ru">Стратегия и запуск B2B-продукта для поставщиков</span>
+            <span data-lang-inline="en">B2B Product Strategy & Launch for Suppliers</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <span class="case-year">2024</span>
+          <span class="case-tag"><span data-lang-inline="ru">Стратегия</span><span data-lang-inline="en">Strategy</span></span>
+        </div>
+        <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div>
+            <div class="case-description">
+              <div data-lang="ru">
+                <p><strong style="color:var(--text)">Контекст:</strong> платформа управляла отношениями с поставщиками через Excel и email. Операционная команда тратила ~60% времени на ручную обработку данных. Нужен был самостоятельный B2B-продукт, а не просто «форма в интернете».</p>
+                <p>Я провёл стратегический анализ: изучил конкурентов, поговорил с поставщиками как пользователями и с операционной командой как внутренним заказчиком. Сформулировал Product Vision и OKR на 6 месяцев, согласовал с руководством. Выстроил роадмап на три этапа, определил North Star Metric — количество поставщиков на цифровом процессе.</p>
+                <p>Вёл запуск от Discovery до первого релиза: постановка задач, координация frontend, backend и QA, ежедневный контакт со стейкхолдерами. Продукт вышел в срок и перешёл в стадию роста.</p>
+              </div>
+              <div data-lang="en">
+                <p><strong style="color:var(--text)">Context:</strong> the platform managed supplier relationships via Excel and email. The operations team spent ~60% of its time on manual data processing. A standalone B2B product was needed — not just "a form on the internet."</p>
+                <p>I ran a strategic analysis: studied competitors, spoke with suppliers as users and with the ops team as internal customers. Formulated a Product Vision and 6-month OKRs, aligned with leadership. Built a three-phase roadmap and defined the North Star Metric — number of suppliers on the digital process.</p>
+                <p>I led the launch from Discovery to first release: task definition, coordinating frontend, backend, and QA, daily stakeholder contact. The product launched on time and entered the growth stage.</p>
+              </div>
+            </div>
+            <div class="tools-used">
+              <span class="tool-chip">Notion</span>
+              <span class="tool-chip">Miro</span>
+              <span class="tool-chip">Figma</span>
+              <span class="tool-chip">Jira</span>
+              <span class="tool-chip">OKR</span>
+              <span class="tool-chip">RICE</span>
+              <span class="tool-chip">North Star</span>
+            </div>
+          </div>
+          <div>
+            <div class="results-label"><span data-lang-inline="ru">Результаты</span><span data-lang-inline="en">Outcomes</span></div>
+            <div class="result-row">
+              <div class="result-num">40+</div>
+              <div class="result-text" data-lang="ru">поставщиков переведено на цифровой процесс за первый месяц</div>
+              <div class="result-text" data-lang="en">suppliers migrated to digital process in the first month</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">−80%</div>
+              <div class="result-text" data-lang="ru">ручных операций в операционной команде</div>
+              <div class="result-text" data-lang="en">manual operations reduced in ops team</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">3 мес</div>
+              <div class="result-text" data-lang="ru">от стратегии до production-запуска</div>
+              <div class="result-text" data-lang="en">from strategy to production launch</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="background: var(--surface);">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title"><span data-lang-inline="ru">Мой подход</span><span data-lang-inline="en">My Process</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-step-num">01</div>
+      <div class="process-step-title">Strategy</div>
+      <div class="process-step-text" data-lang="ru">Начинаю со стратегии, не с функций. Изучаю рынок, пользователей и бизнес-контекст — формулирую, <em>зачем</em> мы это делаем и как измерим успех.</div>
+      <div class="process-step-text" data-lang="en">I start with strategy, not features. I study the market, users, and business context — framing <em>why</em> we're doing this and how we'll measure success.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">02</div>
+      <div class="process-step-title">Discovery</div>
+      <div class="process-step-text" data-lang="ru">Глубинные интервью, JTBD, CJM, конкурентный анализ. Ставлю проблему раньше, чем думаю о решении. Гипотезы — на бумаге, потом в тесте.</div>
+      <div class="process-step-text" data-lang="en">In-depth interviews, JTBD, CJM, competitive analysis. I define the problem before thinking about the solution. Hypotheses on paper first, then in tests.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">03</div>
+      <div class="process-step-title">Delivery</div>
+      <div class="process-step-text" data-lang="ru">Управляю запуском кросс-функционально: координирую дизайн, разработку, маркетинг. Приоритизирую жёстко, устраняю блокеры быстро.</div>
+      <div class="process-step-text" data-lang="en">I manage launch cross-functionally: coordinating design, engineering, marketing. I prioritize hard and remove blockers fast.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">04</div>
+      <div class="process-step-title">Growth</div>
+      <div class="process-step-text" data-lang="ru">После запуска — анализ метрик, A/B тесты, итерации. Продукт не заканчивается на релизе: отслеживаю North Star и реагирую на данные.</div>
+      <div class="process-step-text" data-lang="en">Post-launch: metrics analysis, A/B tests, iterations. A product doesn't end at release: I track the North Star and respond to data.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title"><span data-lang-inline="ru">Контакт</span><span data-lang-inline="en">Contact</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-wrap">
+    <div>
+      <h3 class="contact-headline" data-lang="ru">Готов обсудить<br><em>ваш продукт</em></h3>
+      <h3 class="contact-headline" data-lang="en">Ready to discuss<br><em>your product</em></h3>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:d.drobyshevskymius@gmail.com" class="contact-link">
+        <div class="contact-link-icon">✉</div>
+        <div><span class="contact-link-label">Email</span>d.drobyshevskymius@gmail.com</div>
+      </a>
+      <a href="https://t.me/diga7171" class="contact-link">
+        <div class="contact-link-icon">✈</div>
+        <div><span class="contact-link-label">Telegram</span>@diga7171</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2024 Дмитрий Дробышевский · Product Manager</div>
+  <div class="footer-copy" style="color: var(--text-dim);">E-commerce · Digital Products</div>
+</footer>
+
+<script>
+  function setLang(lang, e) {
+    document.body.classList.remove('lang-ru', 'lang-en');
+    document.body.classList.add('lang-' + lang);
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+  function toggleCase(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.case-item').forEach(c => c.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.case-item, .process-step, .skills-category, .service-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
