@@ -294,7 +294,7 @@
   .skill-tag:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
   .skill-tag.highlight { border-color: var(--gold); color: var(--gold); }
 
-  /* SERVICES — новый блок */
+  /* SERVICES */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -372,8 +372,8 @@
   .case-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--bg); background: var(--gold); padding: 3px 10px; letter-spacing: 0.1em; text-transform: uppercase; }
   .case-arrow { width: 24px; height: 24px; color: var(--text-dim); transition: transform 0.3s, color 0.3s; flex-shrink: 0; }
   .case-item.open .case-arrow { transform: rotate(180deg); color: var(--gold); }
-  .case-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-  .case-item.open .case-body { max-height: 1200px; }
+  .case-body { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+  .case-item.open .case-body { max-height: 2400px; }
   .case-content {
     padding: 40px 48px 48px;
     border-top: 1px solid var(--border-dim);
@@ -390,6 +390,65 @@
   .result-text { font-size: 15px; color: var(--text-muted); line-height: 1.4; }
   .tools-used { margin-top: 32px; display: flex; gap: 8px; flex-wrap: wrap; }
   .tool-chip { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--text-dim); border: 1px solid var(--border-dim); padding: 4px 10px; }
+
+  /* CASE SLIDES */
+  .case-slides {
+    padding: 0 48px 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    border-top: 1px solid var(--border-dim);
+  }
+  .case-slides-label {
+    grid-column: 1 / -1;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .case-slides-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-dim);
+  }
+  .slide-card {
+    background: var(--bg);
+    border: 1px solid var(--border-dim);
+    padding: 20px;
+    transition: border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide-card:hover { border-color: var(--border); }
+  .slide-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .slide-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .slide-card svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
   /* PROCESS */
   .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
@@ -480,6 +539,7 @@
     .case-header { grid-template-columns: auto 1fr auto; gap: 16px; padding: 24px; }
     .case-meta { display: none; }
     .case-content { padding: 24px; }
+    .case-slides { padding: 0 24px 24px; grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -512,9 +572,9 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label" data-lang="ru">Продукта</div>
-        <div class="stat-label" data-lang="en">Products</div>
+        <div class="stat-num">5</div>
+        <div class="stat-label" data-lang="ru">Кейсов</div>
+        <div class="stat-label" data-lang="en">Cases</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">2+</div>
@@ -615,7 +675,7 @@
   </div>
 </section>
 
-<!-- SERVICES — новый блок для PM-фриланса -->
+<!-- SERVICES -->
 <section id="services" style="background: var(--surface);">
   <div class="section-header">
     <span class="section-num">02</span>
@@ -683,7 +743,7 @@
           </div>
         </div>
         <div class="case-meta">
-          <span class="case-year">2023</span>
+          <span class="case-year">2025</span>
           <span class="case-tag"><span data-lang-inline="ru">Discovery</span><span data-lang-inline="en">Discovery</span></span>
         </div>
         <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
@@ -746,7 +806,7 @@
           </div>
         </div>
         <div class="case-meta">
-          <span class="case-year">2024</span>
+          <span class="case-year">2025</span>
           <span class="case-tag"><span data-lang-inline="ru">Рост</span><span data-lang-inline="en">Growth</span></span>
         </div>
         <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
@@ -809,7 +869,7 @@
           </div>
         </div>
         <div class="case-meta">
-          <span class="case-year">2024</span>
+          <span class="case-year">2025</span>
           <span class="case-tag"><span data-lang-inline="ru">Стратегия</span><span data-lang-inline="en">Strategy</span></span>
         </div>
         <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
@@ -858,6 +918,445 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- CASE 4 -->
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <span class="case-num">04</span>
+        <div class="case-title-block">
+          <div class="case-company">Fashion Retail / Mobile</div>
+          <div class="case-title">
+            <span data-lang-inline="ru">Запуск мобильного приложения для fashion-ритейлера</span>
+            <span data-lang-inline="en">Mobile App Launch for a Fashion Retailer</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <span class="case-year">2025</span>
+          <span class="case-tag"><span data-lang-inline="ru">Mobile</span><span data-lang-inline="en">Mobile</span></span>
+        </div>
+        <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div>
+            <div class="case-description">
+              <div data-lang="ru">
+                <p><strong style="color:var(--text)">Контекст:</strong> fashion-ритейлер с 2M+ посетителей сайта в месяц не имел мобильного приложения. При этом 63% трафика приходило с мобильных браузеров — но конверсия там была в 2,7 раза ниже десктопной. Очевидный разрыв.</p>
+                <p>Как PM я запустил discovery: 14 глубинных интервью с лояльными покупателями, тепловые карты мобильного веба, конкурентный бенчмарк 6 приложений. Выяснил, что пользователи не хотят «ещё один каталог» — им нужны эксклюзивные предложения, быстрый поиск и удобная история заказов. Сформулировал скоуп MVP: каталог с фильтрацией, wishlist, корзина, пуш-уведомления, личный кабинет.</p>
+                <p>Вёл разработку iOS и Android параллельно: постановка задач, координация двух команд, еженедельные demo. Провёл закрытое бета-тестирование на 500 пользователях — собрал 280 единиц обратной связи, закрыл 23 критических бага до публичного релиза. Запустились точно в срок.</p>
+              </div>
+              <div data-lang="en">
+                <p><strong style="color:var(--text)">Context:</strong> a fashion retailer with 2M+ monthly website visitors had no mobile app. Yet 63% of traffic came from mobile browsers — with conversion 2.7x lower than desktop. An obvious gap.</p>
+                <p>As PM, I launched discovery: 14 in-depth interviews with loyal customers, mobile web heatmaps, competitive benchmark of 6 apps. Found that users didn't want "another catalog" — they needed exclusive offers, fast search, and easy order history. Scoped the MVP: catalog with filters, wishlist, cart, push notifications, account.</p>
+                <p>I ran iOS and Android development in parallel: task definition, coordinating two teams, weekly demos. Ran closed beta with 500 users — collected 280 pieces of feedback, closed 23 critical bugs before public release. Launched on schedule.</p>
+              </div>
+            </div>
+            <div class="tools-used">
+              <span class="tool-chip">Figma</span>
+              <span class="tool-chip">Amplitude</span>
+              <span class="tool-chip">Hotjar</span>
+              <span class="tool-chip">Jira</span>
+              <span class="tool-chip">Notion</span>
+              <span class="tool-chip">CustDev</span>
+              <span class="tool-chip">A/B Test</span>
+              <span class="tool-chip">Firebase</span>
+            </div>
+          </div>
+          <div>
+            <div class="results-label"><span data-lang-inline="ru">Результаты</span><span data-lang-inline="en">Outcomes</span></div>
+            <div class="result-row">
+              <div class="result-num">35K</div>
+              <div class="result-text" data-lang="ru">установок за первые 30 дней после публичного релиза</div>
+              <div class="result-text" data-lang="en">installs in the first 30 days after public launch</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">4.3★</div>
+              <div class="result-text" data-lang="ru">средний рейтинг в App Store и Google Play</div>
+              <div class="result-text" data-lang="en">average rating on App Store and Google Play</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">+18%</div>
+              <div class="result-text" data-lang="ru">заказов из мобильного канала уже в первый месяц</div>
+              <div class="result-text" data-lang="en">orders from mobile channel in the first month</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">Day-7</div>
+              <div class="result-text" data-lang="ru">удержание 41% — выше среднего по нише на 12 п.п.</div>
+              <div class="result-text" data-lang="en">retention 41% — 12 pp above category average</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDES — CASE 4 -->
+        <div class="case-slides">
+          <div class="case-slides-label">
+            <span data-lang-inline="ru">Визуализация кейса</span>
+            <span data-lang-inline="en">Case Visuals</span>
+          </div>
+
+          <!-- Slide 1: Mobile Traffic Opportunity -->
+          <div class="slide-card">
+            <div class="slide-card-label">
+              <span data-lang-inline="ru">Мобильный разрыв</span>
+              <span data-lang-inline="en">Mobile Gap</span>
+              <div class="slide-dot"></div>
+            </div>
+            <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background -->
+              <rect width="280" height="180" fill="#0a0a08"/>
+              <!-- Grid lines -->
+              <line x1="40" y1="20" x2="40" y2="148" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+              <line x1="40" y1="148" x2="260" y2="148" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+              <!-- Y axis labels -->
+              <text x="32" y="152" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="end">0</text>
+              <text x="32" y="114" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="end">25</text>
+              <text x="32" y="76" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="end">50</text>
+              <text x="32" y="38" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="end">75</text>
+              <!-- H lines -->
+              <line x1="40" y1="110" x2="260" y2="110" stroke="rgba(201,168,76,0.04)" stroke-width="1" stroke-dasharray="3,4"/>
+              <line x1="40" y1="72" x2="260" y2="72" stroke="rgba(201,168,76,0.04)" stroke-width="1" stroke-dasharray="3,4"/>
+              <line x1="40" y1="34" x2="260" y2="34" stroke="rgba(201,168,76,0.04)" stroke-width="1" stroke-dasharray="3,4"/>
+              <!-- Bar: Web Traffic Mobile 63% -->
+              <rect x="58" y="47" width="36" height="101" fill="rgba(201,168,76,0.25)" rx="1"/>
+              <rect x="58" y="47" width="36" height="4" fill="#c9a84c" rx="1"/>
+              <text x="76" y="43" fill="#c9a84c" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">63%</text>
+              <text x="76" y="163" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Mobile</text>
+              <text x="76" y="172" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Traffic</text>
+              <!-- Bar: Mobile Conv Before 3.1% -->
+              <rect x="122" y="136" width="36" height="12" fill="rgba(212,85,42,0.3)" rx="1"/>
+              <rect x="122" y="136" width="36" height="2" fill="#d4552a" rx="1"/>
+              <text x="140" y="132" fill="#d4552a" font-size="10" font-family="monospace" text-anchor="middle">3.1%</text>
+              <text x="140" y="163" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Conv.</text>
+              <text x="140" y="172" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">before</text>
+              <!-- Arrow -->
+              <text x="178" y="130" fill="#5a5850" font-size="16" text-anchor="middle">→</text>
+              <!-- Bar: Mobile Conv After 8.4% -->
+              <rect x="196" y="115" width="36" height="33" fill="rgba(201,168,76,0.4)" rx="1"/>
+              <rect x="196" y="115" width="36" height="3" fill="#c9a84c" rx="1"/>
+              <text x="214" y="111" fill="#c9a84c" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">8.4%</text>
+              <text x="214" y="163" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Conv.</text>
+              <text x="214" y="172" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">after app</text>
+              <!-- Label -->
+              <text x="140" y="14" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">CONVERSION · MOBILE TRAFFIC</text>
+            </svg>
+          </div>
+
+          <!-- Slide 2: App Roadmap -->
+          <div class="slide-card">
+            <div class="slide-card-label">
+              <span data-lang-inline="ru">Роадмап запуска</span>
+              <span data-lang-inline="en">Launch Roadmap</span>
+              <div class="slide-dot"></div>
+            </div>
+            <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="180" fill="#0a0a08"/>
+              <!-- Timeline line -->
+              <line x1="24" y1="90" x2="256" y2="90" stroke="rgba(201,168,76,0.15)" stroke-width="1.5"/>
+              <!-- Phase 1 -->
+              <circle cx="56" cy="90" r="8" fill="#c9a84c" opacity="1"/>
+              <text x="56" y="93" fill="#0a0a08" font-size="8" font-family="monospace" text-anchor="middle" font-weight="bold">1</text>
+              <text x="56" y="72" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle">Discovery</text>
+              <text x="56" y="112" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед. 1–3</text>
+              <text x="56" y="122" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">CustDev</text>
+              <text x="56" y="132" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">+ scope</text>
+              <!-- Connector -->
+              <line x1="64" y1="90" x2="104" y2="90" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <!-- Phase 2 -->
+              <circle cx="112" cy="90" r="8" fill="#c9a84c" opacity="0.8"/>
+              <text x="112" cy="93" fill="#0a0a08" font-size="8" font-family="monospace" text-anchor="middle" font-weight="bold">2</text>
+              <text x="112" y="72" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle">Design</text>
+              <text x="112" y="112" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед. 4–6</text>
+              <text x="112" y="122" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Figma</text>
+              <text x="112" y="132" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">+ flows</text>
+              <!-- Connector -->
+              <line x1="120" y1="90" x2="160" y2="90" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <!-- Phase 3 -->
+              <circle cx="168" cy="90" r="8" fill="#c9a84c" opacity="0.6"/>
+              <text x="168" y="93" fill="#0a0a08" font-size="8" font-family="monospace" text-anchor="middle" font-weight="bold">3</text>
+              <text x="168" y="72" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle">Build</text>
+              <text x="168" y="112" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед. 7–14</text>
+              <text x="168" y="122" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">iOS + </text>
+              <text x="168" y="132" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Android</text>
+              <!-- Connector -->
+              <line x1="176" y1="90" x2="216" y2="90" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <!-- Phase 4 -->
+              <circle cx="224" cy="90" r="8" fill="#c9a84c" opacity="1"/>
+              <text x="224" y="93" fill="#0a0a08" font-size="8" font-family="monospace" text-anchor="middle" font-weight="bold">4</text>
+              <text x="224" y="72" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle">Launch</text>
+              <text x="224" y="112" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед. 15</text>
+              <text x="224" y="122" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Beta →</text>
+              <text x="224" y="132" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Public</text>
+              <!-- Title -->
+              <text x="140" y="18" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">PRODUCT ROADMAP · 15 WEEKS</text>
+              <!-- Completion check -->
+              <rect x="190" y="56" width="54" height="14" fill="rgba(201,168,76,0.12)" rx="2"/>
+              <text x="217" y="66" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle">✓ в срок</text>
+            </svg>
+          </div>
+
+          <!-- Slide 3: Key Metrics -->
+          <div class="slide-card">
+            <div class="slide-card-label">
+              <span data-lang-inline="ru">Метрики запуска</span>
+              <span data-lang-inline="en">Launch Metrics</span>
+              <div class="slide-dot"></div>
+            </div>
+            <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="180" fill="#0a0a08"/>
+              <!-- Metric 1 -->
+              <rect x="16" y="20" width="116" height="66" fill="rgba(201,168,76,0.06)" rx="2" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <text x="74" y="55" fill="#c9a84c" font-size="26" font-family="'Courier New', monospace" text-anchor="middle" font-weight="bold">35K</text>
+              <text x="74" y="72" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">УСТАНОВОК · 30 ДНЕЙ</text>
+              <text x="74" y="36" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle">Downloads</text>
+              <!-- Metric 2 -->
+              <rect x="148" y="20" width="116" height="66" fill="rgba(201,168,76,0.06)" rx="2" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <text x="206" y="55" fill="#c9a84c" font-size="26" font-family="'Courier New', monospace" text-anchor="middle" font-weight="bold">4.3★</text>
+              <text x="206" y="72" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">APP STORE / PLAY</text>
+              <text x="206" y="36" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle">Rating</text>
+              <!-- Metric 3 -->
+              <rect x="16" y="100" width="116" height="66" fill="rgba(201,168,76,0.06)" rx="2" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <text x="74" y="135" fill="#c9a84c" font-size="26" font-family="'Courier New', monospace" text-anchor="middle" font-weight="bold">+18%</text>
+              <text x="74" y="152" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">ЗАКАЗОВ · MOBILE</text>
+              <text x="74" y="116" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle">Orders</text>
+              <!-- Metric 4 -->
+              <rect x="148" y="100" width="116" height="66" fill="rgba(201,168,76,0.06)" rx="2" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <text x="206" y="135" fill="#c9a84c" font-size="26" font-family="'Courier New', monospace" text-anchor="middle" font-weight="bold">41%</text>
+              <text x="206" y="152" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">DAY-7 RETENTION</text>
+              <text x="206" y="116" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle">Retention</text>
+            </svg>
+          </div>
+        </div>
+        <!-- /SLIDES CASE 4 -->
+      </div>
+    </div>
+
+    <!-- CASE 5 -->
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <span class="case-num">05</span>
+        <div class="case-title-block">
+          <div class="case-company">Marketplace / E-commerce</div>
+          <div class="case-title">
+            <span data-lang-inline="ru">Персонализация рекомендаций: рост среднего чека</span>
+            <span data-lang-inline="en">Recommendation Personalization: AOV Growth</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <span class="case-year">2025</span>
+          <span class="case-tag"><span data-lang-inline="ru">Growth</span><span data-lang-inline="en">Growth</span></span>
+        </div>
+        <svg class="case-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div>
+            <div class="case-description">
+              <div data-lang="ru">
+                <p><strong style="color:var(--text)">Контекст:</strong> маркетплейс показывал всем пользователям одинаковый блок «Хиты продаж» — без какой-либо персонализации. Средний чек не рос 8 месяцев подряд. Аналитика Amplitude показывала: блок рекомендаций открывает 72% пользователей, но CTR составлял лишь 4.3%.</p>
+                <p>Как PM я инициировал продуктовый эксперимент: проанализировал 200K сессий покупок, выделил 4 поведенческих сегмента. Совместно с ML-командой сформулировал требования к движку: входные признаки, схема выходных данных, API-контракт, допустимая latency. Выбрали алгоритм коллаборативной фильтрации с fallback на популярность.</p>
+                <p>Провёл поэтапный rollout: 5% → 20% → 50% → 100%. На каждом этапе — A/B тест с удержанием контрольной группы, анализ lift по среднему чеку и повторным покупкам. Итоговые результаты превысили целевые значения OKR.</p>
+              </div>
+              <div data-lang="en">
+                <p><strong style="color:var(--text)">Context:</strong> the marketplace showed all users the same "Bestsellers" block — zero personalization. Average order value hadn't grown in 8 consecutive months. Amplitude showed 72% of users open the recommendations block, but CTR was only 4.3%.</p>
+                <p>As PM, I initiated a product experiment: analyzed 200K purchase sessions, identified 4 behavioral segments. With the ML team, I formulated requirements for the recommendation engine: input features, output schema, API contract, acceptable latency. We chose collaborative filtering with popularity fallback.</p>
+                <p>Ran a staged rollout: 5% → 20% → 50% → 100%. At each stage — A/B test with a held-out control group, lift analysis on AOV and repeat purchases. Final results exceeded OKR targets.</p>
+              </div>
+            </div>
+            <div class="tools-used">
+              <span class="tool-chip">Amplitude</span>
+              <span class="tool-chip">Notion</span>
+              <span class="tool-chip">Jira</span>
+              <span class="tool-chip">Miro</span>
+              <span class="tool-chip">A/B Test</span>
+              <span class="tool-chip">OKR</span>
+              <span class="tool-chip">SQL</span>
+              <span class="tool-chip">Figma</span>
+            </div>
+          </div>
+          <div>
+            <div class="results-label"><span data-lang-inline="ru">Результаты</span><span data-lang-inline="en">Outcomes</span></div>
+            <div class="result-row">
+              <div class="result-num">+31%</div>
+              <div class="result-text" data-lang="ru">рост среднего чека у пользователей с персонализацией</div>
+              <div class="result-text" data-lang="en">average order value lift for personalized users</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">+12%</div>
+              <div class="result-text" data-lang="ru">повторных покупок в течение 30 дней</div>
+              <div class="result-text" data-lang="en">repeat purchases within 30 days</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">CTR</div>
+              <div class="result-text" data-lang="ru">блока рекомендаций вырос с 4.3% до 11.8%</div>
+              <div class="result-text" data-lang="en">recommendation block CTR grew from 4.3% to 11.8%</div>
+            </div>
+            <div class="result-row">
+              <div class="result-num">6 нед</div>
+              <div class="result-text" data-lang="ru">от гипотезы до полного rollout на 100% аудитории</div>
+              <div class="result-text" data-lang="en">from hypothesis to full 100% audience rollout</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDES — CASE 5 -->
+        <div class="case-slides">
+          <div class="case-slides-label">
+            <span data-lang-inline="ru">Визуализация кейса</span>
+            <span data-lang-inline="en">Case Visuals</span>
+          </div>
+
+          <!-- Slide 1: Before/After Recommendations -->
+          <div class="slide-card">
+            <div class="slide-card-label">
+              <span data-lang-inline="ru">До / После</span>
+              <span data-lang-inline="en">Before / After</span>
+              <div class="slide-dot"></div>
+            </div>
+            <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="180" fill="#0a0a08"/>
+              <!-- BEFORE -->
+              <text x="62" y="18" fill="#5a5850" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">BEFORE</text>
+              <rect x="12" y="24" width="100" height="14" fill="rgba(90,88,80,0.2)" rx="2"/>
+              <text x="62" y="34" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Хиты продаж (все)</text>
+              <!-- Same boxes for all -->
+              <rect x="12" y="42" width="29" height="36" fill="rgba(90,88,80,0.15)" rx="2" stroke="rgba(90,88,80,0.3)" stroke-width="1"/>
+              <rect x="15" y="46" width="23" height="18" fill="rgba(90,88,80,0.3)" rx="1"/>
+              <text x="26" y="70" fill="#5a5850" font-size="5" font-family="monospace" text-anchor="middle">Товар 1</text>
+              <rect x="47" y="42" width="29" height="36" fill="rgba(90,88,80,0.15)" rx="2" stroke="rgba(90,88,80,0.3)" stroke-width="1"/>
+              <rect x="50" y="46" width="23" height="18" fill="rgba(90,88,80,0.3)" rx="1"/>
+              <text x="61" y="70" fill="#5a5850" font-size="5" font-family="monospace" text-anchor="middle">Товар 2</text>
+              <rect x="82" y="42" width="29" height="36" fill="rgba(90,88,80,0.15)" rx="2" stroke="rgba(90,88,80,0.3)" stroke-width="1"/>
+              <rect x="85" y="46" width="23" height="18" fill="rgba(90,88,80,0.3)" rx="1"/>
+              <text x="96" y="70" fill="#5a5850" font-size="5" font-family="monospace" text-anchor="middle">Товар 3</text>
+              <!-- CTR label -->
+              <text x="62" y="92" fill="#d4552a" font-size="9" font-family="monospace" text-anchor="middle">CTR 4.3%</text>
+
+              <!-- User A same as User B label -->
+              <rect x="12" y="102" width="44" height="12" fill="rgba(90,88,80,0.15)" rx="2"/>
+              <text x="34" y="111" fill="#5a5850" font-size="6" font-family="monospace" text-anchor="middle">User A</text>
+              <rect x="68" y="102" width="44" height="12" fill="rgba(90,88,80,0.15)" rx="2"/>
+              <text x="90" y="111" fill="#5a5850" font-size="6" font-family="monospace" text-anchor="middle">User B</text>
+              <text x="62" y="128" fill="#5a5850" font-size="6" font-family="monospace" text-anchor="middle">← одинаковые товары →</text>
+
+              <!-- Divider -->
+              <line x1="140" y1="10" x2="140" y2="170" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="4,4"/>
+
+              <!-- AFTER -->
+              <text x="212" y="18" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">AFTER</text>
+              <rect x="148" y="24" width="120" height="14" fill="rgba(201,168,76,0.1)" rx="2"/>
+              <text x="208" y="34" fill="#c9a84c" font-size="7" font-family="monospace" text-anchor="middle">Для вас (персонально)</text>
+
+              <!-- User A — sports -->
+              <text x="174" y="52" fill="#8a8778" font-size="6" font-family="monospace" text-anchor="middle">User A · спорт</text>
+              <rect x="150" y="56" width="22" height="28" fill="rgba(201,168,76,0.2)" rx="2" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <text x="161" y="73" fill="#c9a84c" font-size="5" font-family="monospace" text-anchor="middle">👟</text>
+              <rect x="176" y="56" width="22" height="28" fill="rgba(201,168,76,0.2)" rx="2" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <text x="187" y="73" fill="#c9a84c" font-size="5" font-family="monospace" text-anchor="middle">🏃</text>
+              <rect x="202" y="56" width="22" height="28" fill="rgba(201,168,76,0.2)" rx="2" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <text x="213" y="73" fill="#c9a84c" font-size="5" font-family="monospace" text-anchor="middle">⚽</text>
+
+              <!-- User B — fashion -->
+              <text x="222" y="52" fill="#8a8778" font-size="6" font-family="monospace" text-anchor="middle">User B · мода</text>
+              <rect x="228" y="56" width="14" height="28" fill="rgba(201,168,76,0.12)" rx="2" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <text x="235" y="73" fill="#c9a84c" font-size="5" font-family="monospace" text-anchor="middle">👗</text>
+              <rect x="246" y="56" width="14" height="28" fill="rgba(201,168,76,0.12)" rx="2" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <text x="253" y="73" fill="#c9a84c" font-size="5" font-family="monospace" text-anchor="middle">👜</text>
+
+              <!-- CTR label after -->
+              <text x="208" y="100" fill="#c9a84c" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">CTR 11.8%</text>
+              <text x="208" y="114" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">+175% к исходному</text>
+
+              <!-- AOV badge -->
+              <rect x="158" y="128" width="100" height="22" fill="rgba(201,168,76,0.15)" rx="2" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <text x="208" y="143" fill="#c9a84c" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">AOV +31%</text>
+            </svg>
+          </div>
+
+          <!-- Slide 2: Rollout Chart -->
+          <div class="slide-card">
+            <div class="slide-card-label">
+              <span data-lang-inline="ru">Поэтапный rollout</span>
+              <span data-lang-inline="en">Staged Rollout</span>
+              <div class="slide-dot"></div>
+            </div>
+            <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="180" fill="#0a0a08"/>
+              <!-- Axes -->
+              <line x1="40" y1="16" x2="40" y2="140" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+              <line x1="40" y1="140" x2="264" y2="140" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+              <!-- Audience % bars -->
+              <!-- Week 1: 5% -->
+              <rect x="50" y="133" width="28" height="7" fill="rgba(201,168,76,0.4)" rx="1"/>
+              <text x="64" y="155" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед 1</text>
+              <text x="64" y="130" fill="#c9a84c" font-size="7" font-family="monospace" text-anchor="middle">5%</text>
+              <!-- Week 2: 20% -->
+              <rect x="98" y="112" width="28" height="28" fill="rgba(201,168,76,0.5)" rx="1"/>
+              <text x="112" y="155" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед 2</text>
+              <text x="112" y="108" fill="#c9a84c" font-size="7" font-family="monospace" text-anchor="middle">20%</text>
+              <!-- Week 3: 50% -->
+              <rect x="146" y="70" width="28" height="70" fill="rgba(201,168,76,0.65)" rx="1"/>
+              <text x="160" y="155" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед 4</text>
+              <text x="160" y="66" fill="#c9a84c" font-size="7" font-family="monospace" text-anchor="middle">50%</text>
+              <!-- Week 4: 100% -->
+              <rect x="194" y="16" width="36" height="124" fill="rgba(201,168,76,0.8)" rx="1"/>
+              <text x="212" y="155" fill="#5a5850" font-size="7" font-family="monospace" text-anchor="middle">Нед 6</text>
+              <text x="212" y="12" fill="#c9a84c" font-size="8" font-family="monospace" text-anchor="middle" font-weight="bold">100%</text>
+              <!-- AOV line overlay -->
+              <polyline points="64,132 112,110 160,88 212,54" fill="none" stroke="#d4552a" stroke-width="1.5" stroke-dasharray="5,3"/>
+              <circle cx="64" cy="132" r="3" fill="#d4552a"/>
+              <circle cx="112" cy="110" r="3" fill="#d4552a"/>
+              <circle cx="160" cy="88" r="3" fill="#d4552a"/>
+              <circle cx="212" cy="54" r="4" fill="#d4552a"/>
+              <!-- Legend -->
+              <rect x="44" y="165" width="10" height="4" fill="rgba(201,168,76,0.7)" rx="1"/>
+              <text x="58" y="170" fill="#5a5850" font-size="6" font-family="monospace">% аудитории</text>
+              <line x1="130" y1="167" x2="144" y2="167" stroke="#d4552a" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <circle cx="137" cy="167" r="2" fill="#d4552a"/>
+              <text x="148" y="170" fill="#5a5850" font-size="6" font-family="monospace">AOV lift</text>
+              <text x="152" y="16" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">ROLLOUT STAGES</text>
+            </svg>
+          </div>
+
+          <!-- Slide 3: Segment analysis -->
+          <div class="slide-card">
+            <div class="slide-card-label">
+              <span data-lang-inline="ru">Сегменты пользователей</span>
+              <span data-lang-inline="en">User Segments</span>
+              <div class="slide-dot"></div>
+            </div>
+            <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="180" fill="#0a0a08"/>
+              <text x="140" y="16" fill="#8a8778" font-size="8" font-family="monospace" text-anchor="middle" letter-spacing="1">BEHAVIORAL SEGMENTS · 200K SESSIONS</text>
+              <!-- Segment bubbles -->
+              <!-- Seg 1: Browsers 38% -->
+              <circle cx="80" cy="72" r="38" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <text x="80" y="67" fill="#c9a84c" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">38%</text>
+              <text x="80" y="79" fill="#8a8778" font-size="7" font-family="monospace" text-anchor="middle">Browsers</text>
+              <text x="80" y="89" fill="#5a5850" font-size="6" font-family="monospace" text-anchor="middle">просмотр</text>
+              <!-- Seg 2: Hunters 29% -->
+              <circle cx="190" cy="65" r="30" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+              <text x="190" y="61" fill="#c9a84c" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">29%</text>
+              <text x="190" y="72" fill="#8a8778" font-size="7" font-family="monospace" text-anchor="middle">Hunters</text>
+              <text x="190" y="82" fill="#5a5850" font-size="6" font-family="monospace" text-anchor="middle">поиск цен</text>
+              <!-- Seg 3: Loyals 20% -->
+              <circle cx="85" cy="148" r="24" fill="rgba(201,168,76,0.22)" stroke="rgba(201,168,76,0.6)" stroke-width="1"/>
+              <text x="85" y="144" fill="#c9a84c" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">20%</text>
+              <text x="85" y="155" fill="#8a8778" font-size="7" font-family="monospace" text-anchor="middle">Loyals</text>
+              <!-- Seg 4: Impulse 13% -->
+              <circle cx="195" cy="148" r="18" fill="rgba(201,168,76,0.28)" stroke="#c9a84c" stroke-width="1.5"/>
+              <text x="195" y="144" fill="#c9a84c" font-size="9" font-family="monospace" text-anchor="middle" font-weight="bold">13%</text>
+              <text x="195" y="155" fill="#8a8778" font-size="7" font-family="monospace" text-anchor="middle">Impulse</text>
+              <!-- Arrow to impulse -->
+              <line x1="220" y1="130" x2="238" y2="118" stroke="rgba(201,168,76,0.5)" stroke-width="1" stroke-dasharray="3,2"/>
+              <rect x="234" y="108" width="44" height="22" fill="rgba(201,168,76,0.1)" rx="2" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <text x="256" y="118" fill="#c9a84c" font-size="7" font-family="monospace" text-anchor="middle">MAX AOV</text>
+              <text x="256" y="126" fill="#c9a84c" font-size="7" font-family="monospace" text-anchor="middle">+44%</text>
+            </svg>
+          </div>
+        </div>
+        <!-- /SLIDES CASE 5 -->
       </div>
     </div>
 
@@ -925,7 +1424,7 @@
 </section>
 
 <footer>
-  <div class="footer-copy">© 2024 Дмитрий Дробышевский · Product Manager</div>
+  <div class="footer-copy">© 2025 Дмитрий Дробышевский · Product Manager</div>
   <div class="footer-copy" style="color: var(--text-dim);">E-commerce · Digital Products</div>
 </footer>
 
