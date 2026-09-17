@@ -165,6 +165,12 @@
     font-size:clamp(1.15rem,2.4vw,1.5rem);
     margin-top:.35rem;
   }
+  .hero p.tldr{
+    display:inline-block; margin-top:1rem; max-width:56ch;
+    padding:.55rem .9rem; background:var(--accent-soft); border-radius:var(--radius);
+    font-family:'IBM Plex Mono', monospace; font-size:.82rem; font-weight:600;
+    color:var(--ink); line-height:1.5;
+  }
   .hero p.lede{
     margin-top:1.4rem; max-width:52ch;
     font-size:1.06rem; color:var(--ink-soft);
@@ -256,6 +262,17 @@
   }
   .idea-block h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--teal); font-weight:600; margin:0 0 .5rem; }
   .idea-block p{ margin:0; font-size:.95rem; color:var(--ink); }
+  .otherwise-block{
+    margin-top:1.8rem; padding:1.2rem 1.4rem;
+    background:var(--surface); border:1px dashed var(--line-strong); border-radius:var(--radius);
+  }
+  .otherwise-block h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin:0 0 .5rem; }
+  .otherwise-block p{ margin:0; font-size:.9rem; color:var(--ink-soft); }
+  .metrics-note{
+    margin-top:1.8rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem;
+    letter-spacing:.04em; color:var(--ink-faint);
+  }
+  .metrics-note + .metrics{ margin-top:.5rem; }
   .region-chart{ margin-top:1.8rem; }
   .region-chart h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin:0 0 .8rem; }
   .rbar{ display:grid; grid-template-columns:6.5rem 1fr 3.2rem; align-items:center; gap:.7rem; margin-bottom:.55rem; font-size:.82rem; }
@@ -315,6 +332,7 @@
      CONTACT / FOOTER */
   footer{ padding:clamp(3rem,7vw,5rem) 0 clamp(2rem,4vw,3rem); border-top:1px solid var(--line); }
   .contact-head h2{ font-size:clamp(1.9rem,4.4vw,3rem); max-width:16ch; }
+  .contact-head .availability{ margin-top:.9rem; font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--teal); }
   .contact-links{ display:flex; flex-wrap:wrap; gap:1rem 2.2rem; margin-top:2rem; }
   .contact-links a{
     display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
@@ -358,10 +376,12 @@
       <div>
         <h1>Продукт доказывается цифрами,<br>не&nbsp;презентацией.</h1>
         <div class="role">Product Manager — портфолио кейсов</div>
+        <p class="tldr">Junior Product Manager · технический бэкграунд (2 года сисадмин + 1 год техподдержка Яндекс) · ищу продуктовую роль, где важно понимание инфраструктуры и работы с разработкой</p>
         <p class="lede">Пять доведённых до конца продуктовых кейсов в travel, HR, media, proptech и telecom: от исследования рынка и аудитории — через BRD и продуктовые решения — до прототипа, метрик и внешней защиты каждого решения.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#cases">Смотреть кейсы</a>
           <a class="btn ghost" href="mailto:d.drobyshevskymius@gmail.com">Написать на почту</a>
+          <a class="btn ghost" href="https://t.me/diga7171" target="_blank" rel="noopener">Написать в Telegram</a>
         </div>
         <div class="tool-chips">
           <span class="chip">Product Discovery</span>
@@ -371,6 +391,8 @@
           <span class="chip">Когортный анализ</span>
           <span class="chip">MVP-стратегия</span>
           <span class="chip">Юнит-экономика</span>
+          <span class="chip">Agile/Scrum</span>
+          <span class="chip">SQL</span>
           <span class="chip">AI-инструменты</span>
         </div>
       </div>
@@ -393,10 +415,10 @@
     <div class="cases-wrap">
       <nav class="rail" id="rail">
         <a href="#case-01" data-case="case-01"><span class="ri">01</span><span class="t">«Погнали!»</span></a>
-        <a href="#case-02" data-case="case-02"><span class="ri">02</span><span class="t">«Этажи»</span></a>
+        <a href="#case-02" data-case="case-02"><span class="ri">02</span><span class="t">Билайн Бизнес</span></a>
         <a href="#case-03" data-case="case-03"><span class="ri">03</span><span class="t">РБК</span></a>
         <a href="#case-04" data-case="case-04"><span class="ri">04</span><span class="t">OPEN CITY</span></a>
-        <a href="#case-05" data-case="case-05"><span class="ri">05</span><span class="t">Билайн Бизнес</span></a>
+        <a href="#case-05" data-case="case-05"><span class="ri">05</span><span class="t">«Этажи»</span></a>
       </nav>
       <div>
         <!-- CASE 01 -->
@@ -433,6 +455,7 @@
               </ul>
             </div>
           </div>
+          <div class="metrics-note">Целевые показатели — расчётная модель плана, не измеренный результат</div>
           <div class="metrics">
             <div><div class="v num">200+</div><div class="k">активных гидов за 3 мес.</div></div>
             <div><div class="v num">15 млн ₽</div><div class="k">GMV за 3 мес.</div></div>
@@ -443,6 +466,10 @@
           <blockquote class="quote">«Это одна из самых полных и структурированных работ, которые я видела. Ключевая идея «Гид как идея для путешествия» + нативная интеграция + лимит 30% коммерции — это правильная продуктовая философия, а не просто набор фич.»
             <cite>— Юлия Савицкая</cite>
           </blockquote>
+          <div class="otherwise-block">
+            <h4>Что бы сделал иначе</h4>
+            <p>Тарифы и CPC-аукцион я закладывал по бенчмаркам конкурентов, а не по интервью с самими гидами платформы. Следующим шагом провёл бы 5–7 коротких интервью с действующими гидами «Погнали!», чтобы проверить, не отпугнёт ли аукционная модель тех, кто уже монетизируется через частные брони.</p>
+          </div>
           <div class="materials">
             <h4>Материалы</h4>
             <ul>
@@ -456,49 +483,58 @@
         <article class="case" id="case-02">
           <div class="case-top">
             <div>
-              <div class="eyebrow">HR-tech</div>
-              <h3>«Этажи» — рекрутинговый лендинг для АУП</h3>
-              <div class="role-line">Роль: Product / UX · Решение бизнес-кейса компании «Этажи» (Тюменский филиал)</div>
+              <div class="eyebrow">Telecom</div>
+              <h3>Билайн Бизнес — когортный анализ оттока</h3>
+              <div class="role-line">Роль: Product Manager / Analyst · Облачная АТС — анализ удержания клиентов</div>
             </div>
             <div class="case-id">02</div>
           </div>
           <div class="tags">
-            <span class="tag industry">HR-tech</span>
-            <span class="tag">Анализ воронки</span>
-            <span class="tag">CJM</span>
-            <span class="tag">Лендинг (HTML)</span>
-            <span class="tag">UTM-аналитика</span>
+            <span class="tag industry">Telecom</span>
+            <span class="tag">Когортный анализ</span>
+            <span class="tag">Retention</span>
+            <span class="tag">Data-driven гипотезы</span>
           </div>
-          <div class="task-block">Девелоперская компания «Этажи» получает слишком мало откликов на вакансии административно-управленческого персонала и не видит, какие каналы привлечения работают. Нужен лендинг, который поднимет число и качество откликов и даст сквозную аналитику.</div>
+          <div class="task-block">Продукт «Облачная АТС» — №3 на рынке по числу клиентов и №5 по выручке. Рынок замедляется (рост +4,5% в 2024 → прогноз +1,5% в 2025), а отток клиентов обгоняет замедление рынка. Нужно провести когортный анализ и предложить гипотезы по сокращению оттока.</div>
           <div class="two-col">
             <div class="did">
               <h4>Что сделано</h4>
               <ul>
-                <li><b>Анализ воронки найма</b> за сен–ноя 2024: 92 контакта → 55 лидов → 4 найма, сквозная конверсия 4,3%, выявлено 47% отклонённых лидов и потеря 59% кандидатов между контактом и приглашением</li>
-                <li><b>CJM кандидата</b> из 7 этапов (осознание → оффер) с болевыми точками и UX-решением на каждом шаге</li>
+                <li><b>Когортный анализ</b> на 3 271 подключении за январь–декабрь 2024 (5 регионов, горизонт наблюдения по апрель 2025), помесячная матрица удержания М0–М14</li>
+                <li><b>Аномалия:</b> когорта августа 2024 — удержание на 10–15 п.п. ниже соседних месяцев на всех горизонтах</li>
               </ul>
             </div>
             <div class="did">
               <h4>&nbsp;</h4>
               <ul>
-                <li><b>Тепловая карта</b> существующих лендингов + брендбук (цвет, логотип, стиль)</li>
-                <li><b>Лендинг:</b> 5 разделов, sticky-навигация, фильтры вакансий по отделам, модальные окна, smart-форма с маской телефона, автозахват UTM в скрытые поля, мобильная адаптация</li>
+                <li><b>Региональный разбор:</b> отток от 48% (Восток, регион-эталон) до 60% (Юг, зона риска)</li>
+                <li><b>6 гипотез с аргументами из данных</b> (слабый онбординг, точечный сбой в августе, региональный разрыв качества, нет retention-программы, нет раннего скоринга риска, экономика удержания слабее экономики привлечения) + 3 приоритетные рекомендации</li>
               </ul>
             </div>
           </div>
+          <div class="metrics-note">Результат анализа предоставленного датасета (3 271 подключение) — не прогноз</div>
           <div class="metrics">
-            <div><div class="v num">+10%</div><div class="k">откликов</div></div>
-            <div><div class="v num">+10%</div><div class="k">конверсия отклик → выход</div></div>
-            <div><div class="v num">+5%</div><div class="k">сквозная конверсия</div></div>
-            <div><div class="v">UTM</div><div class="k">аналитика по каналам с 1-го дня</div></div>
+            <div><div class="v num">56%</div><div class="k">суммарный отток продукта за 2024</div></div>
+            <div><div class="v num">~35%</div><div class="k">потеря когорты за первые 3 мес.</div></div>
+            <div><div class="v num">6–7 мес.</div><div class="k">медианный срок жизни клиента</div></div>
+            <div><div class="v num">+259→+13</div><div class="k">чистый прирост клиентов/мес, фев→дек 2024</div></div>
           </div>
-          <blockquote class="quote">«Лендинг соответствует требованиям задания: реализованы все основные блоки, удобная навигация, форма отклика. В презентации отражены цели, инсайты, CJM, внедрённые решения и аргументация каждого из них. Плюс за анализ воронки и связь решений с выявленными проблемами.»
+          <div class="region-chart">
+            <h4>Отток по регионам, 2024</h4>
+            <div class="rbar"><div class="lab">Восток (эталон)</div><div class="track"><div class="fill" style="width:80%;background:var(--teal)"></div></div><div class="val num">48%</div></div>
+            <div class="rbar"><div class="lab">Юг (зона риска)</div><div class="track"><div class="fill" style="width:100%;background:var(--brick)"></div></div><div class="val num">60%</div></div>
+          </div>
+          <blockquote class="quote">«Вы собрали когортную матрицу, исходные агрегаты, графики и скрипты расчёта. В анализе разобраны retention, подключения и отключения, срок жизни клиентов и региональный отток. Выводы и гипотезы опираются на полученные результаты, а для поздних когорт учтён доступный период наблюдения.»
           </blockquote>
+          <div class="otherwise-block">
+            <h4>Что бы сделал иначе</h4>
+            <p>Аномалию августовской когорты я объяснил гипотезой о точечном сбое онбординга, но не смог подтвердить её логами поддержки — их не было в исходных данных. Первым шагом в реальной работе стало бы совместное расследование с саппортом по тикетам, а не приоритизация гипотез без них.</p>
+          </div>
           <div class="materials">
             <h4>Материалы</h4>
             <ul>
-              <li><span class="name">Адаптивный HTML-лендинг с UTM-трекингом и фильтрами вакансий</span></li>
-              <li><span class="name">Презентация-разбор кейса (10 слайдов: цели, воронка, инсайты, CJM)</span></li>
+              <li><span class="name">Презентация, данные, расчёты и дашборд</span><a href="https://drive.google.com/file/d/1t6bqSzFu2_g7KQ-BMhtY8YSIenZhm7p_/view?usp=sharing" target="_blank" rel="noopener">Google Drive ↗</a></li>
+              <li><span class="name">Исходная презентация (11 слайдов)</span></li>
             </ul>
           </div>
         </article>
@@ -542,10 +578,14 @@
           <blockquote class="quote">«В целом работа выполнена хорошо, проблемы определили верно, идеи решают проблемы. Есть понимание retention-механик и привычки ежедневного использования. Особенно хороша идея превращения РБК из новостного сайта в персональный рабочий инструмент.»
             <cite>Отмечена зона роста: не хватает метрик успеха для предложенных фич — честно фиксирую это как открытый пункт кейса, а не додумываю задним числом.</cite>
           </blockquote>
+          <div class="otherwise-block">
+            <h4>Что бы сделал иначе</h4>
+            <p>В разборе уже отмечено — не хватает измеримых метрик успеха для предложенных фич. Я бы закрыл это на этапе защиты: для каждой фичи задал целевой North Star (например, % анонимных читателей, привязавших аккаунт за 30 дней) и минимальный MDE для A/B-теста, прежде чем предлагать приоритизацию.</p>
+          </div>
           <div class="materials">
             <h4>Материалы</h4>
             <ul>
-              <li><span class="name">Презентация решения</span><a href="https://docs.google.com/presentation/d/1vteWyywk1ztt8UBhQhA078Ih7C_vF4myzfGPNZ8h20c/edit?usp=sharing" target="_blank" rel="noopener">Google Slides ↗</a></li>
+              <li><span class="name">Презентация решения — ссылка временно недоступна, обновляется</span></li>
             </ul>
           </div>
         </article>
@@ -583,6 +623,7 @@
               </ul>
             </div>
           </div>
+          <div class="metrics-note">Расчёт бюджета и сроков + целевой критерий пилота — не измеренный результат</div>
           <div class="metrics">
             <div><div class="v num">26 нед.</div><div class="k">пайплайн до публичного запуска</div></div>
             <div><div class="v num">11,13 млн ₽</div><div class="k">ФОТ core-команды до релиза</div></div>
@@ -590,6 +631,10 @@
           </div>
           <blockquote class="quote">«В презентации есть аргументированные продуктовые предложения, проработаны команда, MVP, ключевые данные и пайплайн. Прототип соответствует проекту.»
           </blockquote>
+          <div class="otherwise-block">
+            <h4>Что бы сделал иначе</h4>
+            <p>Гибридную модель команды я выбрал по расчётам бюджета и сроков, а не по пилоту с реальными брокерами. Сначала протестировал бы приложение вручную с 5–10 брокерами на текущей агентской модели — без разработки — чтобы проверить, действительно ли лента «горячих лидов» меняет их поведение, прежде чем закладывать 11+ млн ₽ на core-команду.</p>
+          </div>
           <div class="materials">
             <h4>Материалы</h4>
             <ul>
@@ -603,53 +648,54 @@
         <article class="case" id="case-05">
           <div class="case-top">
             <div>
-              <div class="eyebrow">Telecom</div>
-              <h3>Билайн Бизнес — когортный анализ оттока</h3>
-              <div class="role-line">Роль: Product Manager / Analyst · Облачная АТС — анализ удержания клиентов</div>
+              <div class="eyebrow">HR-tech</div>
+              <h3>«Этажи» — рекрутинговый лендинг для АУП</h3>
+              <div class="role-line">Роль: Product / UX · Решение бизнес-кейса компании «Этажи» (Тюменский филиал)</div>
             </div>
             <div class="case-id">05</div>
           </div>
           <div class="tags">
-            <span class="tag industry">Telecom</span>
-            <span class="tag">Когортный анализ</span>
-            <span class="tag">Retention</span>
-            <span class="tag">Data-driven гипотезы</span>
+            <span class="tag industry">HR-tech</span>
+            <span class="tag">Анализ воронки</span>
+            <span class="tag">CJM</span>
+            <span class="tag">Лендинг (HTML)</span>
+            <span class="tag">UTM-аналитика</span>
           </div>
-          <div class="task-block">Продукт «Облачная АТС» — №3 на рынке по числу клиентов и №5 по выручке. Рынок замедляется (рост +4,5% в 2024 → прогноз +1,5% в 2025), а отток клиентов обгоняет замедление рынка. Нужно провести когортный анализ и предложить гипотезы по сокращению оттока.</div>
+          <div class="task-block">Девелоперская компания «Этажи» получает слишком мало откликов на вакансии административно-управленческого персонала и не видит, какие каналы привлечения работают. Нужен лендинг, который поднимет число и качество откликов и даст сквозную аналитику.</div>
           <div class="two-col">
             <div class="did">
               <h4>Что сделано</h4>
               <ul>
-                <li><b>Когортный анализ</b> на 3 271 подключении за январь–декабрь 2024 (5 регионов, горизонт наблюдения по апрель 2025), помесячная матрица удержания М0–М14</li>
-                <li><b>Аномалия:</b> когорта августа 2024 — удержание на 10–15 п.п. ниже соседних месяцев на всех горизонтах</li>
+                <li><b>Анализ воронки найма</b> за сен–ноя 2024: 92 контакта → 55 лидов → 4 найма, сквозная конверсия 4,3%, выявлено 47% отклонённых лидов и потеря 59% кандидатов между контактом и приглашением</li>
+                <li><b>CJM кандидата</b> из 7 этапов (осознание → оффер) с болевыми точками и UX-решением на каждом шаге</li>
               </ul>
             </div>
             <div class="did">
               <h4>&nbsp;</h4>
               <ul>
-                <li><b>Региональный разбор:</b> отток от 48% (Восток, регион-эталон) до 60% (Юг, зона риска)</li>
-                <li><b>6 гипотез с аргументами из данных</b> (слабый онбординг, точечный сбой в августе, региональный разрыв качества, нет retention-программы, нет раннего скоринга риска, экономика удержания слабее экономики привлечения) + 3 приоритетные рекомендации</li>
+                <li><b>Тепловая карта</b> существующих лендингов + брендбук (цвет, логотип, стиль)</li>
+                <li><b>Лендинг:</b> 5 разделов, sticky-навигация, фильтры вакансий по отделам, модальные окна, smart-форма с маской телефона, автозахват UTM в скрытые поля, мобильная адаптация</li>
               </ul>
             </div>
           </div>
+          <div class="metrics-note">Целевые показатели — расчётная модель плана, не измеренный результат</div>
           <div class="metrics">
-            <div><div class="v num">56%</div><div class="k">суммарный отток продукта за 2024</div></div>
-            <div><div class="v num">~35%</div><div class="k">потеря когорты за первые 3 мес.</div></div>
-            <div><div class="v num">6–7 мес.</div><div class="k">медианный срок жизни клиента</div></div>
-            <div><div class="v num">+259→+13</div><div class="k">чистый прирост клиентов/мес, фев→дек 2024</div></div>
+            <div><div class="v num">+10%</div><div class="k">откликов</div></div>
+            <div><div class="v num">+10%</div><div class="k">конверсия отклик → выход</div></div>
+            <div><div class="v num">+5%</div><div class="k">сквозная конверсия</div></div>
+            <div><div class="v">UTM</div><div class="k">аналитика по каналам с 1-го дня</div></div>
           </div>
-          <div class="region-chart">
-            <h4>Отток по регионам, 2024</h4>
-            <div class="rbar"><div class="lab">Восток (эталон)</div><div class="track"><div class="fill" style="width:80%;background:var(--teal)"></div></div><div class="val num">48%</div></div>
-            <div class="rbar"><div class="lab">Юг (зона риска)</div><div class="track"><div class="fill" style="width:100%;background:var(--brick)"></div></div><div class="val num">60%</div></div>
-          </div>
-          <blockquote class="quote">«Вы собрали когортную матрицу, исходные агрегаты, графики и скрипты расчёта. В анализе разобраны retention, подключения и отключения, срок жизни клиентов и региональный отток. Выводы и гипотезы опираются на полученные результаты, а для поздних когорт учтён доступный период наблюдения.»
+          <blockquote class="quote">«Лендинг соответствует требованиям задания: реализованы все основные блоки, удобная навигация, форма отклика. В презентации отражены цели, инсайты, CJM, внедрённые решения и аргументация каждого из них. Плюс за анализ воронки и связь решений с выявленными проблемами.»
           </blockquote>
+          <div class="otherwise-block">
+            <h4>Что бы сделал иначе</h4>
+            <p>Цели +10% откликов и +10% конверсии — расчёт по логике воронки, а не измеренный результат: лендинг делался как учебный кейс без реального трафика от «Этажи». Я бы запустил A/B-тест против старой версии на 2–4 недели и сверил прогноз с фактом.</p>
+          </div>
           <div class="materials">
             <h4>Материалы</h4>
             <ul>
-              <li><span class="name">Презентация, данные, расчёты и дашборд</span><a href="https://drive.google.com/file/d/1t6bqSzFu2_g7KQ-BMhtY8YSIenZhm7p_/view?usp=sharing" target="_blank" rel="noopener">Google Drive ↗</a></li>
-              <li><span class="name">Исходная презентация (11 слайдов)</span></li>
+              <li><span class="name">Адаптивный HTML-лендинг с UTM-трекингом и фильтрами вакансий</span></li>
+              <li><span class="name">Презентация-разбор кейса (10 слайдов: цели, воронка, инсайты, CJM)</span></li>
             </ul>
           </div>
         </article>
@@ -712,8 +758,9 @@
       <div>
         <div class="eyebrow">Обо мне</div>
         <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem); margin-top:.6rem;">Как устроена работа над кейсом</h2>
-        <p>Пять кейсов в этом портфолио — самостоятельные проекты в рамках практического курса ProductStar «Product Manager 2.0». Каждый прошёл один и тот же путь: от гипотезы и сырых данных до конкретного продуктового решения с измеримыми метриками. Ни один не остался на уровне идеи — каждый доведён до BRD, прототипа или расчётов и прошёл независимую экспертную защиту.</p>
-        <p>Решения опираются на цифры — воронки, когорты, unit-экономику — а не только на описание фич. Там, где в разборе отмечен пробел (например, недостающие метрики успеха в кейсе РБК), это указано как есть.</p>
+        <p>Пять кейсов в этом портфолио — самостоятельные проекты в рамках практического курса ProductStar «Product Manager 2.0». Я выбрал учебные кейсы осознанно: это способ наработать продуктовую методологию на разных индустриях до первой работы в продукте, а не ждать, пока кто-то даст доступ к реальным данным.</p>
+        <p>Каждый прошёл один и тот же путь: от гипотезы и сырых данных до конкретного продуктового решения с измеримыми метриками. Ни один не остался на уровне идеи — я сознательно доводил каждый кейс до BRD, прототипа или расчётов и защищал его перед независимым экспертом.</p>
+        <p>Решения опираются на цифры — воронки, когорты, unit-экономику — а не только на описание фич. Там, где в разборе отмечен пробел (например, недостающие метрики успеха в кейсе РБК), это указано как есть, а в каждом кейсе есть отдельный блок «Что бы сделал иначе» — с честной оценкой ограничений и тем, как я бы их закрыл.</p>
       </div>
       <ul class="approach-list">
         <li><span class="ai">01</span><div><div class="at">Исследование прежде решения</div><div class="ad">Рынок, конкуренты, аудитория и данные — до того, как формулируется фича или требование.</div></div></li>
@@ -728,6 +775,7 @@
     <div class="contact-head">
       <div class="eyebrow">Контакты</div>
       <h2>Открыт к обсуждению новых продуктовых задач.</h2>
+      <div class="availability">Готов начать в течение недели · рассматриваю удалённые роли</div>
     </div>
     <div class="contact-links">
       <a href="mailto:d.drobyshevskymius@gmail.com"><span class="ci">почта</span> d.drobyshevskymius@gmail.com</a>
