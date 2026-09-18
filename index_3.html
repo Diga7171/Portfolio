@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дмитрий Дробышевский — Product Manager Portfolio</title>
+<meta name="description" content="Портфолио продуктового менеджера Дмитрия Дробышевского: пять кейсов от исследования до метрик, резюме и материалы для найма.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Дмитрий Дробышевский — Product Manager Portfolio">
+<meta property="og:description" content="Пять продуктовых кейсов: от исследования и бизнес-требований до прототипа и метрик. Плюс резюме и материалы.">
+<meta property="og:url" content="https://diga7171.github.io/Portfolio/">
+<meta property="og:image" content="https://diga7171.github.io/Portfolio/og-image_2.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Дмитрий Дробышевский — Product Manager Portfolio">
+<meta name="twitter:description" content="Пять продуктовых кейсов: от исследования и бизнес-требований до прототипа и метрик.">
+<meta name="twitter:image" content="https://diga7171.github.io/Portfolio/og-image_2.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1d17'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23f6f4ee' text-anchor='middle'%3E%D0%94%3C/text%3E%3C/svg%3E">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  /* ---------------------------------------------------------
+     TOKENS — light (default) */
+  :root{
+    --bg: #f6f4ee;
+    --surface: #ffffff;
+    --surface-2: #efece2;
+    --ink: #1a1d17;
+    --ink-soft: #565c50;
+    --ink-faint: #8b9082;
+    --line: #ddd8c8;
+    --line-strong: #c7c1ac;
+    --accent: #b5641c;       /* ochre / amber — data highlight */
+    --accent-ink: #ffffff;
+    --accent-soft: #f1e2cd;
+    --teal: #1d6e64;         /* secondary — nod to source brand */
+    --teal-soft: #dcece7;
+    --brick: #a13f2f;        /* churn / risk */
+    --brick-soft: #f2ddd6;
+    --shadow: 0 1px 2px rgba(26,29,23,.04), 0 8px 24px -12px rgba(26,29,23,.12);
+    --radius: 3px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #14171b;
+      --surface: #1b1f24;
+      --surface-2: #20252b;
+      --ink: #eeece3;
+      --ink-soft: #a9ad9f;
+      --ink-faint: #767b70;
+      --line: #2c313a;
+      --line-strong: #3a404a;
+      --accent: #e0a24f;
+      --accent-ink: #191205;
+      --accent-soft: #35291a;
+      --teal: #5fbfae;
+      --teal-soft: #1c2f2c;
+      --brick: #e28577;
+      --brick-soft: #3a2420;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -14px rgba(0,0,0,.55);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14171b;
+    --surface: #1b1f24;
+    --surface-2: #20252b;
+    --ink: #eeece3;
+    --ink-soft: #a9ad9f;
+    --ink-faint: #767b70;
+    --line: #2c313a;
+    --line-strong: #3a404a;
+    --accent: #e0a24f;
+    --accent-ink: #191205;
+    --accent-soft: #35291a;
+    --teal: #5fbfae;
+    --teal-soft: #1c2f2c;
+    --brick: #e28577;
+    --brick-soft: #3a2420;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -14px rgba(0,0,0,.55);
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', system-ui, -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    letter-spacing:-.01em;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.72rem;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .num{ font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1; }
+
+  a{ color:inherit; }
+  a.link{
+    color:var(--teal);
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+  a.link:hover{ color:var(--accent); }
+
+  ::selection{ background:var(--accent-soft); color:var(--ink); }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 3rem); }
+  .prose-wrap{ max-width:760px; }
+
+  /* ---------------------------------------------------------
+     TOP NAV */
+  header.top{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px) saturate(1.1);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:.95rem clamp(1.25rem, 4vw, 3rem);
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+    display:flex; align-items:baseline; gap:.5rem;
+  }
+  .brand .dot{ color:var(--accent); }
+  .nav-wrap{ display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+  nav.primary{ display:flex; gap:1.75rem; flex-wrap:wrap; }
+  nav.primary a{
+    font-size:.88rem; color:var(--ink-soft); text-decoration:none;
+    padding:.25rem 0; border-bottom:1px solid transparent;
+  }
+  nav.primary a:hover{ color:var(--ink); border-color:var(--line-strong); }
+  .lang-toggle{
+    background:none; border:1px solid var(--line-strong); color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:.72rem; font-weight:600; padding:.3rem .6rem;
+    border-radius:100px; cursor:pointer; letter-spacing:.04em;
+  }
+  .lang-toggle:hover{ border-color:var(--ink); color:var(--ink); }
+  @media (max-width:640px){ nav.primary{ gap:1.1rem; } nav.primary a{ font-size:.8rem; } }
+  @media (max-width:560px){
+    .topbar{ flex-wrap:wrap; row-gap:.5rem; }
+    .brand{ font-size:.92rem; }
+    .nav-wrap{ flex-wrap:wrap; width:100%; gap:.5rem 1rem; }
+    nav.primary{ flex-wrap:wrap; width:100%; gap:.5rem 1rem; }
+  }
+
+  /* ---------------------------------------------------------
+     HERO */
+  .hero{ padding:clamp(3rem,8vw,5.5rem) 0 clamp(2.5rem,6vw,4rem); position:relative; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.35fr .9fr; gap:clamp(2rem,5vw,4rem);
+    align-items:end;
+  }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.6vw, 4.1rem);
+    line-height:.98;
+    overflow-wrap:anywhere;
+  }
+  .hero .role{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+    color:var(--teal);
+    font-size:clamp(1.15rem,2.4vw,1.5rem);
+    margin-top:.35rem;
+  }
+  .hero p.tldr{
+    display:inline-block; margin-top:1rem; max-width:56ch;
+    padding:.55rem .9rem; background:var(--accent-soft); border-radius:var(--radius);
+    font-family:'IBM Plex Mono', monospace; font-size:.82rem; font-weight:600;
+    color:var(--ink); line-height:1.5;
+  }
+  .hero p.lede{
+    margin-top:1.4rem; max-width:52ch;
+    font-size:1.06rem; color:var(--ink-soft);
+  }
+  .hero-actions{ display:flex; gap:.75rem; margin-top:1.9rem; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.82rem;
+    padding:.72rem 1.15rem; border-radius:var(--radius);
+    text-decoration:none; border:1px solid var(--line-strong);
+    transition:border-color .15s, background .15s, color .15s, transform .1s;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn.primary{ background:var(--ink); color:var(--bg); border-color:var(--ink); }
+  .btn.primary:hover{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .btn.ghost{ color:var(--ink-soft); }
+  .btn.ghost:hover{ border-color:var(--ink); color:var(--ink); }
+
+  .stat-strip{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); min-width:0;
+  }
+  .stat-strip > div{ padding:1.1rem 1.4rem; border-left:1px solid var(--line); min-width:0; }
+  .stat-strip .l{ overflow-wrap:break-word; }
+  .stat-strip > div:first-child{ border-left:none; padding-left:0; }
+  .stat-strip .n{ font-family:'IBM Plex Mono', monospace; font-size:1.9rem; font-weight:600; color:var(--ink); }
+  .stat-strip .l{ font-size:.78rem; color:var(--ink-faint); margin-top:.15rem; }
+  @media (max-width:640px){ .stat-strip{ grid-template-columns:1fr 1fr; } .stat-strip > div:nth-child(2){border-left:1px solid var(--line);} .stat-strip > div:nth-child(3){border-left:none; padding-left:0; margin-top:1rem;} }
+
+  .tool-chips{ display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.6rem; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    padding:.32rem .6rem; border:1px solid var(--line-strong); border-radius:100px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------------------------------------------------------
+     SECTION HEADERS */
+  .section-head{ padding:clamp(2.5rem,6vw,4rem) 0 clamp(1.5rem,3vw,2rem); }
+  .section-head .eyebrow{ margin-bottom:.6rem; }
+  .section-head h2{ font-size:clamp(1.7rem,3.4vw,2.3rem); }
+  .section-head p{ color:var(--ink-soft); margin-top:.8rem; max-width:60ch; }
+
+  /* ---------------------------------------------------------
+     CASES */
+  #cases{ padding-bottom:1rem; }
+  .cases-wrap{ display:grid; grid-template-columns:200px 1fr; gap:3rem; align-items:start; }
+  @media (max-width:900px){ .cases-wrap{ grid-template-columns:1fr; } .rail{ display:none; } }
+
+  .rail{ position:sticky; top:4.4rem; padding-top:.3rem; }
+  .rail a{
+    display:flex; gap:.6rem; align-items:baseline; text-decoration:none;
+    padding:.55rem 0; border-top:1px solid var(--line);
+    color:var(--ink-faint); font-size:.86rem;
+  }
+  .rail a:first-child{ border-top:none; }
+  .rail a .ri{ font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--ink-faint); }
+  .rail a span.t{ line-height:1.3; }
+  .rail a[aria-current="true"]{ color:var(--ink); }
+  .rail a[aria-current="true"] .ri{ color:var(--accent); }
+
+  .case{ padding:clamp(2.4rem,5vw,3.6rem) 0; border-top:1px solid var(--line); }
+  .case:first-child{ border-top:none; padding-top:0; }
+  .case-top{ display:flex; justify-content:space-between; gap:1.5rem; align-items:flex-start; }
+  .case-id{ font-family:'IBM Plex Mono',monospace; color:var(--line-strong); font-size:2.6rem; font-weight:600; line-height:1; }
+  .case h3{ font-size:clamp(1.4rem,2.6vw,1.85rem); margin-top:.2rem; }
+  .case .role-line{ color:var(--ink-faint); font-size:.86rem; margin-top:.45rem; }
+  .tags{ display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.9rem; }
+  .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem;
+    padding:.28rem .55rem; background:var(--surface-2); border-radius:2px; color:var(--ink-soft);
+  }
+  .tag.industry{ background:var(--teal-soft); color:var(--teal); }
+
+  .task-block{
+    margin-top:1.5rem; padding:1.1rem 1.3rem;
+    background:var(--surface); border-left:2px solid var(--accent);
+    border-radius:0 var(--radius) var(--radius) 0;
+    font-size:.98rem; color:var(--ink-soft);
+    box-shadow:var(--shadow);
+  }
+
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; margin-top:1.7rem; }
+  @media (max-width:680px){ .two-col{ grid-template-columns:1fr; } }
+  .did h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin:0 0 .7rem; }
+  .did ul{ margin:0; padding:0; list-style:none; }
+  .did li{ position:relative; padding-left:1.1rem; margin-bottom:.65rem; font-size:.93rem; color:var(--ink-soft); }
+  .did li::before{ content:"–"; position:absolute; left:0; color:var(--ink-faint); }
+  .did li b{ color:var(--ink); font-weight:600; }
+
+  .metrics{ display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1px; margin-top:1.8rem; background:var(--line); border:1px solid var(--line); }
+  .metrics > div{ background:var(--surface); padding:1rem .9rem; }
+  .metrics .v{ font-family:'IBM Plex Mono',monospace; font-size:1.35rem; font-weight:600; color:var(--ink); }
+  .metrics .k{ font-size:.74rem; color:var(--ink-faint); margin-top:.3rem; line-height:1.3; }
+
+  .idea-block{
+    margin-top:1.8rem; padding:1.2rem 1.4rem;
+    background:var(--teal-soft); border-radius:var(--radius);
+  }
+  .idea-block h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--teal); font-weight:600; margin:0 0 .5rem; }
+  .idea-block p{ margin:0; font-size:.95rem; color:var(--ink); }
+  .otherwise-block{
+    margin-top:1.8rem; padding:1.2rem 1.4rem;
+    background:var(--surface); border:1px dashed var(--line-strong); border-radius:var(--radius);
+  }
+  .otherwise-block h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin:0 0 .5rem; }
+  .otherwise-block p{ margin:0; font-size:.9rem; color:var(--ink-soft); }
+  .metrics-note{
+    margin-top:1.8rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem;
+    letter-spacing:.04em; color:var(--ink-faint);
+  }
+  .metrics-note + .metrics{ margin-top:.5rem; }
+
+  .region-chart{ margin-top:1.8rem; }
+  .region-chart h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin:0 0 .8rem; }
+  .rbar{ display:grid; grid-template-columns:6.5rem 1fr 3.2rem; align-items:center; gap:.7rem; margin-bottom:.55rem; font-size:.82rem; }
+  .rbar .lab{ color:var(--ink-soft); }
+  .rbar .track{ background:var(--surface-2); border-radius:2px; height:.6rem; overflow:hidden; }
+  .rbar .fill{ height:100%; border-radius:2px; }
+  .rbar .val{ font-family:'IBM Plex Mono',monospace; text-align:right; color:var(--ink); }
+
+  blockquote.quote{
+    margin:1.8rem 0 0; padding:1.3rem 1.5rem;
+    border-top:1px solid var(--line-strong); border-bottom:1px solid var(--line-strong);
+    font-family:'Fraunces', serif; font-style:italic; font-size:1.05rem;
+    color:var(--ink); line-height:1.5;
+  }
+  blockquote.quote cite{ display:block; font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:.75rem; color:var(--ink-faint); margin-top:.8rem; }
+  .note{ margin-top:.7rem; font-size:.85rem; color:var(--accent); font-style:normal; }
+  .note::before{ content:"→ "; }
+
+  .materials{ margin-top:1.6rem; }
+  .materials h4{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin:0 0 .6rem; }
+  .materials ul{ list-style:none; margin:0; padding:0; }
+  .materials li{
+    display:flex; justify-content:space-between; gap:1rem;
+    padding:.55rem 0; border-top:1px dashed var(--line-strong); font-size:.88rem;
+  }
+  .materials li:first-child{ border-top:none; }
+  .materials li .name{ color:var(--ink-soft); }
+  .materials li a{ color:var(--teal); text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:.78rem; white-space:nowrap; }
+  .materials li a:hover{ color:var(--accent); }
+
+  /* ---------------------------------------------------------
+     DOWNLOADS */
+  .downloads{ padding:clamp(2.5rem,6vw,4rem) 0; border-top:1px solid var(--line); }
+  .dl-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:1rem; margin-top:1.6rem; }
+  .dl-card{
+    padding:1.4rem; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--surface); display:flex; flex-direction:column; gap:.6rem;
+    text-decoration:none; transition:border-color .15s, transform .1s;
+  }
+  .dl-card:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .dl-card .dl-top{ display:flex; justify-content:space-between; align-items:center; }
+  .dl-card .dl-name{ font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; color:var(--ink); }
+  .dl-card .dl-icon{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--accent); border:1px solid var(--accent); padding:.2rem .5rem; border-radius:100px; }
+  .dl-card .dl-desc{ font-size:.86rem; color:var(--ink-soft); }
+  .dl-card .dl-meta{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin-top:.2rem; }
+
+  /* ---------------------------------------------------------
+     ABOUT */
+  #about{ padding:clamp(2.5rem,6vw,4rem) 0; border-top:1px solid var(--line); }
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:2rem; } }
+  #about p{ color:var(--ink-soft); font-size:1rem; }
+  #about p + p{ margin-top:1rem; }
+  .approach-list{ list-style:none; margin:0; padding:0; }
+  .approach-list li{ display:grid; grid-template-columns:2.4rem 1fr; gap:.9rem; padding:1rem 0; border-top:1px solid var(--line); }
+  .approach-list li:first-child{ border-top:none; padding-top:0; }
+  .approach-list .ai{ font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:.85rem; padding-top:.15rem; }
+  .approach-list .at{ font-weight:600; color:var(--ink); font-size:.95rem; }
+  .approach-list .ad{ color:var(--ink-soft); font-size:.86rem; margin-top:.25rem; }
+
+  /* ---------------------------------------------------------
+     CONTACT / FOOTER */
+  footer{ padding:clamp(3rem,7vw,5rem) 0 clamp(2rem,4vw,3rem); border-top:1px solid var(--line); }
+  .contact-head h2{ font-size:clamp(1.9rem,4.4vw,3rem); max-width:16ch; }
+  .contact-head .availability{ margin-top:.9rem; font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--teal); }
+  .contact-links{ display:flex; flex-wrap:wrap; gap:1rem 2.2rem; margin-top:2rem; }
+  .contact-links a{
+    display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+    text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:.95rem;
+    color:var(--ink); padding-bottom:.35rem; border-bottom:1px solid var(--line-strong);
+    max-width:100%; overflow-wrap:anywhere;
+  }
+  .contact-links a:hover{ border-color:var(--accent); color:var(--accent); }
+  .contact-links a .ci{ color:var(--ink-faint); font-size:.78rem; }
+  .foot-bottom{
+    margin-top:3.2rem; padding-top:1.4rem; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem;
+    font-size:.78rem; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace;
+  }
+  .theme-toggle{
+    background:none; border:1px solid var(--line-strong); color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:.72rem; padding:.35rem .6rem;
+    border-radius:100px; cursor:pointer;
+  }
+  .theme-toggle:hover{ border-color:var(--ink); color:var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand" data-i18n="brand">Дмитрий Дробышевский<span class="dot">.</span></div>
+    <div class="nav-wrap">
+      <nav class="primary">
+        <a href="#cases" data-i18n="nav-cases">Кейсы</a>
+        <a href="#experience" data-i18n="nav-experience">Опыт</a>
+        <a href="#downloads" data-i18n="nav-materials">Материалы</a>
+        <a href="#about" data-i18n="nav-about">Обо мне</a>
+        <a href="resume-dmitrii-drobyshevsky.pdf" target="_blank" rel="noopener" data-i18n="nav-resume">Резюме</a>
+        <a href="#contact" data-i18n="nav-contact">Контакты</a>
+      </nav>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1 data-i18n="hero-h1">Продукт доказывается цифрами,<br>не&nbsp;презентацией.</h1>
+        <div class="role" data-i18n="hero-role">Product Manager — портфолио кейсов</div>
+        <p class="tldr" data-i18n="hero-tldr">Junior Product Manager · технический бэкграунд (2 года сисадмин + 1 год техподдержка Яндекс) · ищу продуктовую роль, где важно понимание инфраструктуры и работы с разработкой</p>
+        <p class="lede" data-i18n="hero-lede">Пять доведённых до конца продуктовых кейсов в travel, HR, media, proptech и telecom: от исследования рынка и аудитории — через BRD и продуктовые решения — до прототипа, метрик и внешней защиты каждого решения.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#cases" data-i18n="hero-btn-cases">Смотреть кейсы</a>
+          <a class="btn ghost" href="mailto:d.drobyshevskymius@gmail.com" data-i18n="hero-btn-mail">Написать на почту</a>
+          <a class="btn ghost" href="https://t.me/diga7171" target="_blank" rel="noopener" data-i18n="hero-btn-tg">Написать в Telegram</a>
+        </div>
+        <div class="tool-chips">
+          <span class="chip">Product Discovery</span>
+          <span class="chip">BRD</span>
+          <span class="chip">CJM</span>
+          <span class="chip">Growth / Retention</span>
+          <span class="chip" data-i18n="chip-cohort">Когортный анализ</span>
+          <span class="chip" data-i18n="chip-mvp">MVP-стратегия</span>
+          <span class="chip" data-i18n="chip-unit">Юнит-экономика</span>
+          <span class="chip">Agile/Scrum</span>
+          <span class="chip">SQL</span>
+          <span class="chip" data-i18n="chip-ai">AI-инструменты</span>
+        </div>
+      </div>
+      <div>
+        <div class="stat-strip">
+          <div><div class="n num">5</div><div class="l" data-i18n="stat1-l">завершённых кейсов</div></div>
+          <div><div class="n num">4</div><div class="l" data-i18n="stat2-l">отрасли: travel, HR, media, proptech, telecom</div></div>
+          <div><div class="n num">2026</div><div class="l" data-i18n="stat3-l">год подготовки портфолио</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="cases-eyebrow">Кейсы · 01–05</div>
+      <h2 data-i18n="cases-h2">Пять кейсов, один цикл</h2>
+      <p data-i18n="cases-p">В каждом — гипотеза и данные → продуктовое решение или бизнес-требования → прототип или расчёты → метрики и защита перед экспертом. Ниже — разбор по одной странице на кейс, с честными пометками там, где отклик выявил зону роста.</p>
+    </div>
+
+    <div class="cases-wrap">
+      <nav class="rail" id="rail">
+        <a href="#case-01" data-case="case-01"><span class="ri">01</span><span class="t" data-i18n="rail-1">«Погнали!»</span></a>
+        <a href="#case-02" data-case="case-02"><span class="ri">02</span><span class="t" data-i18n="rail-2">Билайн Бизнес</span></a>
+        <a href="#case-03" data-case="case-03"><span class="ri">03</span><span class="t" data-i18n="rail-3">РБК</span></a>
+        <a href="#case-04" data-case="case-04"><span class="ri">04</span><span class="t" data-i18n="rail-4">OPEN CITY</span></a>
+        <a href="#case-05" data-case="case-05"><span class="ri">05</span><span class="t" data-i18n="rail-5">«Этажи»</span></a>
+      </nav>
+
+      <div>
+
+        <!-- CASE 01 -->
+        <article class="case" id="case-01">
+          <div class="case-top">
+            <div>
+              <div class="eyebrow">Travel-tech</div>
+              <h3 data-i18n="c1-h3">«Погнали!» — гиды-экскурсоводы в каталоге</h3>
+              <div class="role-line" data-i18n="c1-role">Роль: Product Manager (соло) · Исследование → BRD → прототип и стратегия монетизации</div>
+            </div>
+            <div class="case-id">01</div>
+          </div>
+          <div class="tags">
+            <span class="tag industry">Travel-tech</span>
+            <span class="tag">Product Discovery</span>
+            <span class="tag" data-i18n="c1-tag-analysis">Конкурентный анализ</span>
+            <span class="tag">BRD · 39 FR</span>
+            <span class="tag" data-i18n="c1-tag-pricing">Ценообразование</span>
+          </div>
+
+          <div class="task-block" data-i18n="c1-task">«Погнали!» (pognali.ru) — социальная TravelTech-платформа с UGC-ядром 35–55 лет, запускающая маркетплейс гидов. Нужно нативно встроить коммерческие объявления в каталог, не разрушив доверие и retention UGC-аудитории, и вывести монетизацию на GMV ≥ 15 млн ₽ за 3 месяца.</div>
+
+          <div class="two-col">
+            <div class="did">
+              <h4 data-i18n="did-h4">Что сделано</h4>
+              <ul>
+                <li data-i18n="c1-did1-li1"><b>Исследование в 4 частях:</b> платформа, 5 прямых/косвенных конкурентов (Tripster, Sputnik8, YouTravel.me и др.) с feature-сравнением и ценами, 2 персоны с JTBD, объём и тренды рынка + SWOT</li>
+                <li data-i18n="c1-did1-li2"><b>Монетизация:</b> 3 тарифа (BASIC/STANDARD/PRO) + аукцион CPC + комиссия 5%, лимит доли рекламы в ленте ≤ 30%</li>
+              </ul>
+            </div>
+            <div class="did">
+              <h4>&nbsp;</h4>
+              <ul>
+                <li data-i18n="c1-did2-li1"><b>BRD v1.0:</b> 39 функциональных + 8 нефункциональных требований, 6 ролей пользователей, 4 use case, риски с митигацией, план релизов MVP → v2.0</li>
+                <li data-i18n="c1-did2-li2"><b>Презентация на 10 слайдов:</b> концепция «гид как идея для путешествия», формула ранжирования карточек, прототип на 7 экранов, поквартальный план запуска</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="metrics-note" data-i18n="c1-metricsnote">Целевые показатели — расчётная модель плана, не измеренный результат</div>
+          <div class="metrics">
+            <div><div class="v num">200+</div><div class="k" data-i18n="c1-metric1-k">активных гидов за 3 мес.</div></div>
+            <div><div class="v num" data-i18n="c1-metric2-v">15 млн ₽</div><div class="k" data-i18n="c1-metric2-k">GMV за 3 мес.</div></div>
+            <div><div class="v num">≥8%</div><div class="k" data-i18n="c1-metric3-k">CTR карточки гида</div></div>
+            <div><div class="v num" data-i18n="c1-metric4-v">≥2,5%</div><div class="k" data-i18n="c1-metric4-k">конверсия в бронь</div></div>
+            <div><div class="v num">5%</div><div class="k" data-i18n="c1-metric5-k">комиссия платформы</div></div>
+          </div>
+
+          <blockquote class="quote" data-i18n="c1-quote">«Это одна из самых полных и структурированных работ, которые я видела. Ключевая идея «Гид как идея для путешествия» + нативная интеграция + лимит 30% коммерции — это правильная продуктовая философия, а не просто набор фич.»
+            <cite>— Юлия Савицкая</cite>
+          </blockquote>
+
+          <div class="otherwise-block">
+            <h4 data-i18n="otherwise-h4">Что бы сделал иначе</h4>
+            <p data-i18n="c1-otherwise-p">Тарифы и CPC-аукцион я закладывал по бенчмаркам конкурентов, а не по интервью с самими гидами платформы. Следующим шагом провёл бы 5–7 коротких интервью с действующими гидами «Погнали!», чтобы проверить, не отпугнёт ли аукционная модель тех, кто уже монетизируется через частные брони.</p>
+          </div>
+
+
+          <div class="materials">
+            <h4 data-i18n="materials-h4">Материалы</h4>
+            <ul>
+              <li><span class="name" data-i18n="c1-materials-li1">Пакет исследований (платформа, конкуренты, аудитория, рынок)</span></li>
+              <li><span class="name" data-i18n="c1-materials-li2">Бизнес-требования BRD v1.0</span></li>
+              <li><span class="name" data-i18n="c1-materials-li3">Презентация «Гиды в Погнали!» (10 слайдов, прототип 7 экранов)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CASE 02 -->
+        <article class="case" id="case-02">
+          <div class="case-top">
+            <div>
+              <div class="eyebrow">Telecom</div>
+              <h3 data-i18n="c2-h3">Билайн Бизнес — когортный анализ оттока</h3>
+              <div class="role-line" data-i18n="c2-role">Роль: Product Manager / Analyst · Облачная АТС — анализ удержания клиентов</div>
+            </div>
+            <div class="case-id">02</div>
+          </div>
+          <div class="tags">
+            <span class="tag industry">Telecom</span>
+            <span class="tag" data-i18n="c2-tag-cohort">Когортный анализ</span>
+            <span class="tag">Retention</span>
+            <span class="tag" data-i18n="c2-tag-data">Data-driven гипотезы</span>
+          </div>
+
+          <div class="task-block" data-i18n="c2-task">Продукт «Облачная АТС» — №3 на рынке по числу клиентов и №5 по выручке. Рынок замедляется (рост +4,5% в 2024 → прогноз +1,5% в 2025), а отток клиентов обгоняет замедление рынка. Нужно провести когортный анализ и предложить гипотезы по сокращению оттока.</div>
+
+          <div class="two-col">
+            <div class="did">
+              <h4 data-i18n="did-h4">Что сделано</h4>
+              <ul>
+                <li data-i18n="c2-did1-li1"><b>Когортный анализ</b> на 3 271 подключении за январь–декабрь 2024 (5 регионов, горизонт наблюдения по апрель 2025), помесячная матрица удержания М0–М14</li>
+                <li data-i18n="c2-did1-li2"><b>Аномалия:</b> когорта августа 2024 — удержание на 10–15 п.п. ниже соседних месяцев на всех горизонтах</li>
+              </ul>
+            </div>
+            <div class="did">
+              <h4>&nbsp;</h4>
+              <ul>
+                <li data-i18n="c2-did2-li1"><b>Региональный разбор:</b> отток от 48% (Восток, регион-эталон) до 60% (Юг, зона риска)</li>
+                <li data-i18n="c2-did2-li2"><b>6 гипотез с аргументами из данных</b> (слабый онбординг, точечный сбой в августе, региональный разрыв качества, нет retention-программы, нет раннего скоринга риска, экономика удержания слабее экономики привлечения) + 3 приоритетные рекомендации</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="metrics-note" data-i18n="c2-metricsnote">Результат анализа предоставленного датасета (3 271 подключение) — не прогноз</div>
+          <div class="metrics">
+            <div><div class="v num">56%</div><div class="k" data-i18n="c2-metric1-k">суммарный отток продукта за 2024</div></div>
+            <div><div class="v num">~35%</div><div class="k" data-i18n="c2-metric2-k">потеря когорты за первые 3 мес.</div></div>
+            <div><div class="v num" data-i18n="c2-metric3-v">6–7 мес.</div><div class="k" data-i18n="c2-metric3-k">медианный срок жизни клиента</div></div>
+            <div><div class="v num">+259→+13</div><div class="k" data-i18n="c2-metric4-k">чистый прирост клиентов/мес, фев→дек 2024</div></div>
+          </div>
+
+          <div class="region-chart">
+            <h4 data-i18n="c2-region-h4">Отток по регионам, 2024</h4>
+            <div class="rbar"><div class="lab" data-i18n="c2-rbar1-lab">Восток (эталон)</div><div class="track"><div class="fill" style="width:80%;background:var(--teal)"></div></div><div class="val num">48%</div></div>
+            <div class="rbar"><div class="lab" data-i18n="c2-rbar2-lab">Юг (зона риска)</div><div class="track"><div class="fill" style="width:100%;background:var(--brick)"></div></div><div class="val num">60%</div></div>
+          </div>
+
+          <blockquote class="quote" data-i18n="c2-quote">«Вы собрали когортную матрицу, исходные агрегаты, графики и скрипты расчёта. В анализе разобраны retention, подключения и отключения, срок жизни клиентов и региональный отток. Выводы и гипотезы опираются на полученные результаты, а для поздних когорт учтён доступный период наблюдения.»
+          </blockquote>
+
+          <div class="otherwise-block">
+            <h4 data-i18n="otherwise-h4">Что бы сделал иначе</h4>
+            <p data-i18n="c2-otherwise-p">Аномалию августовской когорты я объяснил гипотезой о точечном сбое онбординга, но не смог подтвердить её логами поддержки — их не было в исходных данных. Первым шагом в реальной работе стало бы совместное расследование с саппортом по тикетам, а не приоритизация гипотез без них.</p>
+          </div>
+
+
+          <div class="materials">
+            <h4 data-i18n="materials-h4">Материалы</h4>
+            <ul>
+              <li><span class="name" data-i18n="c2-materials-li1-name">Презентация, данные, расчёты и дашборд</span><a href="https://drive.google.com/file/d/1t6bqSzFu2_g7KQ-BMhtY8YSIenZhm7p_/view?usp=sharing" target="_blank" rel="noopener">Google Drive ↗</a></li>
+              <li><span class="name" data-i18n="c2-materials-li2">Исходная презентация (11 слайдов)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CASE 03 -->
+        <article class="case" id="case-03">
+          <div class="case-top">
+            <div>
+              <div class="eyebrow">Media-tech</div>
+              <h3 data-i18n="c3-h3">РБК — фича роста авторизованной аудитории</h3>
+              <div class="role-line" data-i18n="c3-role">Роль: Product Manager · Продуктовое решение для увеличения доли авторизованных пользователей</div>
+            </div>
+            <div class="case-id">03</div>
+          </div>
+          <div class="tags">
+            <span class="tag industry">Media-tech</span>
+            <span class="tag">Growth</span>
+            <span class="tag">Retention</span>
+            <span class="tag" data-i18n="c3-tag-benchmark">Конкурентный бенчмарк</span>
+          </div>
+
+          <div class="task-block" data-i18n="c3-task">У РБК как новостного сайта низкая доля авторизованной аудитории — большинство читателей анонимны и не возвращаются целенаправленно. Нужно найти «узкое горлышко» воронки авторизации и предложить фичи, которые измеримо увеличат авторизованную аудиторию.</div>
+
+          <div class="two-col">
+            <div class="did">
+              <h4 data-i18n="did-h4">Что сделано</h4>
+              <ul>
+                <li data-i18n="c3-did1-li1"><b>Диагностика продукта:</b> анализ ограничений текущей авторизации, определение узкого места воронки</li>
+                <li data-i18n="c3-did1-li2"><b>Конкурентный бенчмарк</b> российских и зарубежных медиа — механики авторизации и удержания лидеров рынка</li>
+              </ul>
+            </div>
+            <div class="did">
+              <h4>&nbsp;</h4>
+              <ul>
+                <li data-i18n="c3-did2-li1"><b>Набор фич под задачу:</b> для каждой — мотивация пользователя, логика «привлечение → захват → удержание»</li>
+                <li data-i18n="c3-did2-li2"><b>Поиск точек привлечения:</b> инвайт-каналы через анализ партнёрских СМИ-сайтов</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="idea-block">
+            <h4 data-i18n="c3-idea-h4">Ключевая идея</h4>
+            <p data-i18n="c3-idea-p">Смещение позиционирования РБК от «новостного сайта» к «персональному рабочему инструменту» — набор фич, который плавно ведёт анонимного читателя к привязке аккаунта и формирует привычку ежедневного использования, а не разовое чтение новости.</p>
+          </div>
+
+          <blockquote class="quote" data-i18n="c3-quote">«В целом работа выполнена хорошо, проблемы определили верно, идеи решают проблемы. Есть понимание retention-механик и привычки ежедневного использования. Особенно хороша идея превращения РБК из новостного сайта в персональный рабочий инструмент.»
+            <cite data-i18n="c3-cite">Отмечена зона роста: не хватает метрик успеха для предложенных фич — честно фиксирую это как открытый пункт кейса, а не додумываю задним числом.</cite>
+          </blockquote>
+
+          <div class="otherwise-block">
+            <h4 data-i18n="otherwise-h4">Что бы сделал иначе</h4>
+            <p data-i18n="c3-otherwise-p">В разборе уже отмечено — не хватает измеримых метрик успеха для предложенных фич. Я бы закрыл это на этапе защиты: для каждой фичи задал целевой North Star (например, % анонимных читателей, привязавших аккаунт за 30 дней) и минимальный MDE для A/B-теста, прежде чем предлагать приоритизацию.</p>
+          </div>
+
+
+          <div class="materials">
+            <h4 data-i18n="materials-h4">Материалы</h4>
+            <ul>
+              <li><span class="name" data-i18n="c3-materials-li1">Презентация решения — ссылка временно недоступна, обновляется</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CASE 04 -->
+        <article class="case" id="case-04">
+          <div class="case-top">
+            <div>
+              <div class="eyebrow">PropTech</div>
+              <h3 data-i18n="c4-h3">OPEN CITY — MVP-платформа для брокеров</h3>
+              <div class="role-line" data-i18n="c4-role">Роль: Product Manager · Переход компании от агентской модели к цифровой IT-платформе</div>
+            </div>
+            <div class="case-id">04</div>
+          </div>
+          <div class="tags">
+            <span class="tag industry">PropTech</span>
+            <span class="tag" data-i18n="c4-tag-mvp">MVP-стратегия</span>
+            <span class="tag" data-i18n="c4-tag-unit">Юнит-экономика</span>
+            <span class="tag" data-i18n="c4-tag-figma">Прототип Figma</span>
+            <span class="tag" data-i18n="c4-tag-roadmap">Роадмап</span>
+          </div>
+
+          <div class="task-block" data-i18n="c4-task">OPEN CITY работает по классической агентской модели: заработок брокеров непрозрачен, клиентов ищут вручную, обучение не масштабируется. Цель — приложение по принципу такси: брокер открывает приложение, видит «горячих» клиентов и заработок в реальном времени, работает без графика и руководителя.</div>
+
+          <div class="two-col">
+            <div class="did">
+              <h4 data-i18n="did-h4">Что сделано</h4>
+              <ul>
+                <li data-i18n="c4-did1-li1"><b>3 модели команды и бюджета:</b> подрядчик (8–14 млн ₽ / 4–6 мес.), фрилансеры (4,5–8 млн ₽ / 5–8 мес.), in-house найм (~10,5–12,5 млн ₽ / 6–8 мес.)</li>
+                <li data-i18n="c4-did1-li2"><b>Рекомендация:</b> гибридная модель — подрядчик ведёт MVP, с 3–4 месяца параллельный найм core-команды (7 ролей, ФОТ 1,59 млн ₽/мес.)</li>
+              </ul>
+            </div>
+            <div class="did">
+              <h4>&nbsp;</h4>
+              <ul>
+                <li data-i18n="c4-did2-li1"><b>Приоритизация MVP:</b> 6 функций P0 (оферта и онбординг, оплата подписки, лента горячих лидов, дашборд заработка, push, модуль обучения) + 9 функций P1/P2</li>
+                <li data-i18n="c4-did2-li2"><b>Карта данных:</b> 10 источников для сборки MVP + кликабельный прототип в Figma на 5 экранов + роадмап на 26 недель с критерием go/no-go пилота</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="metrics-note" data-i18n="c4-metricsnote">Расчёт бюджета и сроков + целевой критерий пилота — не измеренный результат</div>
+          <div class="metrics">
+            <div><div class="v num" data-i18n="c4-metric1-v">26 нед.</div><div class="k" data-i18n="c4-metric1-k">пайплайн до публичного запуска</div></div>
+            <div><div class="v num" data-i18n="c4-metric2-v">11,13 млн ₽</div><div class="k" data-i18n="c4-metric2-k">ФОТ core-команды до релиза</div></div>
+            <div><div class="v num">≥60%</div><div class="k" data-i18n="c4-metric3-k">брокеров закрывают сделку за 8 нед. (критерий пилота)</div></div>
+          </div>
+
+          <blockquote class="quote" data-i18n="c4-quote">«В презентации есть аргументированные продуктовые предложения, проработаны команда, MVP, ключевые данные и пайплайн. Прототип соответствует проекту.»
+          </blockquote>
+
+          <div class="otherwise-block">
+            <h4 data-i18n="otherwise-h4">Что бы сделал иначе</h4>
+            <p data-i18n="c4-otherwise-p">Гибридную модель команды я выбрал по расчётам бюджета и сроков, а не по пилоту с реальными брокерами. Сначала протестировал бы приложение вручную с 5–10 брокерами на текущей агентской модели — без разработки — чтобы проверить, действительно ли лента «горячих лидов» меняет их поведение, прежде чем закладывать 11+ млн ₽ на core-команду.</p>
+          </div>
+
+
+          <div class="materials">
+            <h4 data-i18n="materials-h4">Материалы</h4>
+            <ul>
+              <li><span class="name" data-i18n="c4-materials-li1">Презентация кейса (13 слайдов)</span></li>
+              <li><span class="name" data-i18n="c4-materials-li2">Расчёты: команда/сроки/стоимость, ФОТ, MVP-функционал, роадмап (Excel)</span></li>
+              <li><span class="name" data-i18n="c4-materials-li3-name">Кликабельный прототип MVP</span><a href="https://www.figma.com/design/B3drh3EagMkRC0SDWlKywz/OPEN-CITY-%E2%80%94-MVP-%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF" target="_blank" rel="noopener">Figma ↗</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CASE 05 -->
+        <article class="case" id="case-05">
+          <div class="case-top">
+            <div>
+              <div class="eyebrow">HR-tech</div>
+              <h3 data-i18n="c5-h3">«Этажи» — рекрутинговый лендинг для АУП</h3>
+              <div class="role-line" data-i18n="c5-role">Роль: Product / UX · Решение бизнес-кейса компании «Этажи» (Тюменский филиал)</div>
+            </div>
+            <div class="case-id">05</div>
+          </div>
+          <div class="tags">
+            <span class="tag industry">HR-tech</span>
+            <span class="tag" data-i18n="c5-tag-funnel">Анализ воронки</span>
+            <span class="tag">CJM</span>
+            <span class="tag" data-i18n="c5-tag-landing">Лендинг (HTML)</span>
+            <span class="tag" data-i18n="c5-tag-utm">UTM-аналитика</span>
+          </div>
+
+          <div class="task-block" data-i18n="c5-task">Девелоперская компания «Этажи» получает слишком мало откликов на вакансии административно-управленческого персонала и не видит, какие каналы привлечения работают. Нужен лендинг, который поднимет число и качество откликов и даст сквозную аналитику.</div>
+
+          <div class="two-col">
+            <div class="did">
+              <h4 data-i18n="did-h4">Что сделано</h4>
+              <ul>
+                <li data-i18n="c5-did1-li1"><b>Анализ воронки найма</b> за сен–ноя 2024: 92 контакта → 55 лидов → 4 найма, сквозная конверсия 4,3%, выявлено 47% отклонённых лидов и потеря 59% кандидатов между контактом и приглашением</li>
+                <li data-i18n="c5-did1-li2"><b>CJM кандидата</b> из 7 этапов (осознание → оффер) с болевыми точками и UX-решением на каждом шаге</li>
+              </ul>
+            </div>
+            <div class="did">
+              <h4>&nbsp;</h4>
+              <ul>
+                <li data-i18n="c5-did2-li1"><b>Тепловая карта</b> существующих лендингов + брендбук (цвет, логотип, стиль)</li>
+                <li data-i18n="c5-did2-li2"><b>Лендинг:</b> 5 разделов, sticky-навигация, фильтры вакансий по отделам, модальные окна, smart-форма с маской телефона, автозахват UTM в скрытые поля, мобильная адаптация</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="metrics-note" data-i18n="c5-metricsnote">Целевые показатели — расчётная модель плана, не измеренный результат</div>
+          <div class="metrics">
+            <div><div class="v num">+10%</div><div class="k" data-i18n="c5-metric1-k">откликов</div></div>
+            <div><div class="v num">+10%</div><div class="k" data-i18n="c5-metric2-k">конверсия отклик → выход</div></div>
+            <div><div class="v num">+5%</div><div class="k" data-i18n="c5-metric3-k">сквозная конверсия</div></div>
+            <div><div class="v">UTM</div><div class="k" data-i18n="c5-metric4-k">аналитика по каналам с 1-го дня</div></div>
+          </div>
+
+          <blockquote class="quote" data-i18n="c5-quote">«Лендинг соответствует требованиям задания: реализованы все основные блоки, удобная навигация, форма отклика. В презентации отражены цели, инсайты, CJM, внедрённые решения и аргументация каждого из них. Плюс за анализ воронки и связь решений с выявленными проблемами.»
+          </blockquote>
+
+          <div class="otherwise-block">
+            <h4 data-i18n="otherwise-h4">Что бы сделал иначе</h4>
+            <p data-i18n="c5-otherwise-p">Цели +10% откликов и +10% конверсии — расчёт по логике воронки, а не измеренный результат: лендинг делался как учебный кейс без реального трафика от «Этажи». Я бы запустил A/B-тест против старой версии на 2–4 недели и сверил прогноз с фактом.</p>
+          </div>
+
+
+          <div class="materials">
+            <h4 data-i18n="materials-h4">Материалы</h4>
+            <ul>
+              <li><span class="name" data-i18n="c5-materials-li1">Адаптивный HTML-лендинг с UTM-трекингом и фильтрами вакансий</span></li>
+              <li><span class="name" data-i18n="c5-materials-li2">Презентация-разбор кейса (10 слайдов: цели, воронка, инсайты, CJM)</span></li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & AI -->
+  <section id="experience">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="exp-eyebrow">Бэкграунд и инструменты</div>
+      <h2 data-i18n="exp-h2">Технический опыт и работа с AI</h2>
+      <p data-i18n="exp-p">Год в техподдержке Яндекса и два года системным администратором — прежде чем прийти в продукт, я разбирался, как техника работает изнутри. Это плюс к тому, как я использую AI в самой работе над кейсами и этим сайтом.</p>
+    </div>
+    <div class="two-col">
+      <div class="did">
+        <h4 data-i18n="exp-work-h4">Опыт работы</h4>
+        <ul>
+          <li data-i18n="exp-work-li1"><b>Яндекс, оператор технической поддержки</b> (2025, 1 год): анализировал паттерны обращений, выявлял системные проблемы и передавал разработчикам в виде воспроизводимых сценариев, формировал структурированную обратную связь для продуктовых команд — увидел продуктовые решения изнутри сложного технического продукта.</li>
+          <li data-i18n="exp-work-li2"><b>ГРИЦ, IT-подразделение Белорусской железной дороги, системный администратор</b> (2022–2024, 2 года): администрировал серверную инфраструктуру — серверы, сети, базы данных. Сформировал техническое мышление: читаю документацию по API, понимаю SDLC и ограничения реализации.</li>
+        </ul>
+      </div>
+      <div class="did">
+        <h4 data-i18n="exp-ai-h4">AI в работе</h4>
+        <ul>
+          <li data-i18n="exp-ai-li1"><b>Claude / Claude Code</b> — вайб-кодинг прототипов и рабочих инструментов, работа с документами. Этот сайт-портфолио целиком собран и опубликован с помощью Claude.</li>
+          <li data-i18n="exp-ai-li2"><b>Claude / ChatGPT</b> — ресёрч рынка и конкурентов, генерация и проверка гипотез, черновики BRD и презентаций.</li>
+          <li data-i18n="exp-ai-li3"><b>Figma AI / Midjourney</b> — визуалы и быстрые прототипы.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section class="downloads" id="downloads">
+    <div class="section-head" style="padding-top:0;">
+      <div class="eyebrow" data-i18n="dl-eyebrow">Полные документы</div>
+      <h2 data-i18n="dl-h2">Скачать портфолио целиком</h2>
+      <p data-i18n="dl-p">Короткая версия — пять кейсов на пяти страницах. Полная — с приложениями: пакеты исследований, BRD и презентации в исходном виде. Плюс резюме одним файлом.</p>
+    </div>
+    <div class="dl-grid" id="dl-grid">
+      <a class="dl-card" id="dl-short" href="portfolio-short.pdf" target="_blank" rel="noopener">
+        <div class="dl-top"><span class="dl-name" data-i18n="dl1-name">Краткая версия</span><span class="dl-icon">PDF</span></div>
+        <div class="dl-desc" data-i18n="dl1-desc">5 кейсов по одной странице — задача, решение, метрики, отзыв эксперта.</div>
+        <div class="dl-meta" data-i18n="dl1-meta">8 стр. · ~0,2 МБ · скачать</div>
+      </a>
+      <a class="dl-card" id="dl-full" href="portfolio-full.pdf" target="_blank" rel="noopener">
+        <div class="dl-top"><span class="dl-name" data-i18n="dl2-name">Полная версия с приложениями</span><span class="dl-icon">PDF</span></div>
+        <div class="dl-desc" data-i18n="dl2-desc">Кейсы + исходные материалы: исследования, BRD, презентации в подробном виде.</div>
+        <div class="dl-meta" data-i18n="dl2-meta">82 стр. · ~4,2 МБ · скачать</div>
+      </a>
+      <a class="dl-card" id="dl-resume" href="resume-dmitrii-drobyshevsky.pdf" target="_blank" rel="noopener">
+        <div class="dl-top"><span class="dl-name" data-i18n="dl3-name">Резюме</span><span class="dl-icon">PDF</span></div>
+        <div class="dl-desc" data-i18n="dl3-desc">Опыт, навыки и контакты одним документом — для рассылки и ATS.</div>
+        <div class="dl-meta" data-i18n="dl3-meta">2 стр. · ~0,1 МБ · скачать</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow" data-i18n="about-eyebrow">Обо мне</div>
+        <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem); margin-top:.6rem;" data-i18n="about-h2">Как устроена работа над кейсом</h2>
+        <p data-i18n="about-p1">Пять кейсов в этом портфолио — самостоятельные проекты в рамках практического курса ProductStar «Product Manager 2.0». Я выбрал учебные кейсы осознанно: это способ наработать продуктовую методологию на разных индустриях до первой работы в продукте, а не ждать, пока кто-то даст доступ к реальным данным.</p>
+        <p data-i18n="about-p2">Каждый прошёл один и тот же путь: от гипотезы и сырых данных до конкретного продуктового решения с измеримыми метриками. Ни один не остался на уровне идеи — я сознательно доводил каждый кейс до BRD, прототипа или расчётов и защищал его перед независимым экспертом.</p>
+        <p data-i18n="about-p3">Решения опираются на цифры — воронки, когорты, unit-экономику — а не только на описание фич. Там, где в разборе отмечен пробел (например, недостающие метрики успеха в кейсе РБК), это указано как есть, а в каждом кейсе есть отдельный блок «Что бы сделал иначе» — с честной оценкой ограничений и тем, как я бы их закрыл.</p>
+      </div>
+      <ul class="approach-list">
+        <li><span class="ai">01</span><div><div class="at" data-i18n="approach1-at">Исследование прежде решения</div><div class="ad" data-i18n="approach1-ad">Рынок, конкуренты, аудитория и данные — до того, как формулируется фича или требование.</div></div></li>
+        <li><span class="ai">02</span><div><div class="at" data-i18n="approach2-at">Решение — не список фич</div><div class="ad" data-i18n="approach2-ad">Каждая идея объясняется через мотивацию пользователя и логику привлечение → захват → удержание.</div></div></li>
+        <li><span class="ai">03</span><div><div class="at" data-i18n="approach3-at">Расчёт вместо предположения</div><div class="ad" data-i18n="approach3-ad">Тарифы, ФОТ, конверсии и когорты — с цифрами, которые можно проверить.</div></div></li>
+        <li><span class="ai">04</span><div><div class="at" data-i18n="approach4-at">Внешняя проверка</div><div class="ad" data-i18n="approach4-ad">Каждый кейс прошёл независимую экспертную защиту — обратная связь включена в портфолио без купюр.</div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact">
+    <div class="contact-head">
+      <div class="eyebrow" data-i18n="contact-eyebrow">Контакты</div>
+      <h2 data-i18n="contact-h2">Открыт к обсуждению новых продуктовых задач.</h2>
+      <div class="availability" data-i18n="contact-availability">Готов начать в течение недели · рассматриваю удалённые роли</div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:d.drobyshevskymius@gmail.com"><span class="ci" data-i18n="contact-email-label">почта</span> d.drobyshevskymius@gmail.com</a>
+      <a href="https://t.me/diga7171" target="_blank" rel="noopener"><span class="ci">telegram</span> @diga7171</a>
+      <a href="https://www.linkedin.com/in/dmitrii-drobyshevsky/" target="_blank" rel="noopener"><span class="ci">linkedin</span> /in/dmitrii-drobyshevsky</a>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="foot-bottom-text">Дмитрий Дробышевский · Product Manager Portfolio</span>
+      <button class="theme-toggle" id="theme-toggle" type="button" data-i18n="theme-toggle-label">сменить тему</button>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // scroll-spy for the case rail
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('#rail a'));
+    if(!links.length) return;
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('data-case')] = a; });
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.case'));
+    if(!('IntersectionObserver' in window)) return;
+    var current = null;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          if(current) current.removeAttribute('aria-current');
+          current = map[e.target.id];
+          if(current) current.setAttribute('aria-current','true');
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(s){ io.observe(s); });
+  })();
+
+  // theme toggle (explicit choice overrides system)
+  (function(){
+    var btn = document.getElementById('theme-toggle');
+    var root = document.documentElement;
+    btn.addEventListener('click', function(){
+      var cur = root.getAttribute('data-theme');
+      var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next;
+      if(!cur){ next = sysDark ? 'light' : 'dark'; }
+      else if(cur === 'dark'){ next = 'light'; }
+      else { next = 'dark'; }
+      root.setAttribute('data-theme', next);
+    });
+  })();
+
+  // language toggle RU / EN
+  (function(){
+    var EN = {
+      'brand': 'Dmitrii Drobyshevsky<span class="dot">.</span>',
+      'nav-cases': 'Cases',
+      'nav-experience': 'Experience',
+      'nav-materials': 'Downloads',
+      'nav-about': 'About',
+      'nav-resume': 'Resume',
+      'nav-contact': 'Contact',
+      'hero-h1': 'Product is proven by numbers,<br>not a&nbsp;slide deck.',
+      'hero-role': 'Product Manager — case study portfolio',
+      'hero-tldr': 'Junior Product Manager · technical background (2 years sysadmin + 1 year Yandex tech support) · looking for a product role where understanding infrastructure and engineering matters',
+      'hero-lede': 'Five product cases taken all the way through in travel, HR, media, proptech and telecom: from market and audience research — through BRDs and product decisions — to a prototype, metrics and an external defense of each solution.',
+      'hero-btn-cases': 'View cases',
+      'hero-btn-mail': 'Email me',
+      'hero-btn-tg': 'Message on Telegram',
+      'chip-cohort': 'Cohort analysis',
+      'chip-mvp': 'MVP strategy',
+      'chip-unit': 'Unit economics',
+      'chip-ai': 'AI tools',
+      'stat1-l': 'completed cases',
+      'stat2-l': 'industries: travel, HR, media, proptech, telecom',
+      'stat3-l': 'year the portfolio was built',
+      'cases-eyebrow': 'Cases · 01–05',
+      'cases-h2': 'Five cases, one cycle',
+      'cases-p': 'Each one follows the same loop — hypothesis and data → product decision or business requirements → prototype or calculations → metrics and a defense in front of an expert. Below is a one-page breakdown per case, with honest notes wherever the feedback exposed a growth area.',
+      'rail-1': '«Pognali!»',
+      'rail-2': 'Beeline Business',
+      'rail-3': 'RBC',
+      'rail-4': 'OPEN CITY',
+      'rail-5': '«Etazhi»',
+
+      'c1-h3': '«Pognali!» — tour guides in the catalog',
+      'c1-role': 'Role: Product Manager (solo) · Research → BRD → prototype and monetization strategy',
+      'c1-tag-analysis': 'Competitive analysis',
+      'c1-tag-pricing': 'Pricing',
+      'c1-task': '«Pognali!» (pognali.ru) is a social TravelTech platform with a 35–55 UGC core, launching a marketplace for tour guides. The task: natively embed commercial listings into the catalog without breaking the trust and retention of the UGC audience, and get monetization to GMV ≥ ₽15M in 3 months.',
+      'c1-did1-li1': '<b>Research in 4 parts:</b> the platform, 5 direct/indirect competitors (Tripster, Sputnik8, YouTravel.me and others) with a feature and pricing comparison, 2 personas with JTBD, market size and trends + SWOT',
+      'c1-did1-li2': '<b>Monetization:</b> 3 tiers (BASIC/STANDARD/PRO) + a CPC auction + a 5% commission, ad share in the feed capped at ≤ 30%',
+      'c1-did2-li1': '<b>BRD v1.0:</b> 39 functional + 8 non-functional requirements, 6 user roles, 4 use cases, risks with mitigations, an MVP → v2.0 release plan',
+      'c1-did2-li2': '<b>A 10-slide presentation:</b> the concept of «a guide as a trip idea», the card-ranking formula, a 7-screen prototype, a quarterly launch plan',
+      'c1-metricsnote': 'Target figures — a planning model, not a measured result',
+      'c1-metric1-k': 'active guides in 3 mo.',
+      'c1-metric2-v': '₽15M',
+      'c1-metric2-k': 'GMV in 3 mo.',
+      'c1-metric3-k': 'guide card CTR',
+      'c1-metric4-v': '≥2.5%',
+      'c1-metric4-k': 'booking conversion',
+      'c1-metric5-k': 'platform commission',
+      'c1-quote': '«This is one of the most complete and well-structured pieces of work I have seen. The core idea «a guide as a trip idea» + native integration + the 30% commercial cap — that is a sound product philosophy, not just a feature list.» <cite>— Yulia Savitskaya</cite>',
+      'c1-otherwise-p': 'I set the tiers and the CPC auction from competitor benchmarks, not from interviews with the guides who actually use the platform. The next step would be 5–7 short interviews with active «Pognali!» guides, to check whether the auction model would scare off guides who already monetize through private bookings.',
+      'c1-materials-li1': 'Research package (platform, competitors, audience, market)',
+      'c1-materials-li2': 'Business requirements, BRD v1.0',
+      'c1-materials-li3': 'Presentation «Guides in Pognali!» (10 slides, 7-screen prototype)',
+
+      'c2-h3': 'Beeline Business — cohort churn analysis',
+      'c2-role': 'Role: Product Manager / Analyst · Cloud PBX — customer retention analysis',
+      'c2-tag-cohort': 'Cohort analysis',
+      'c2-tag-data': 'Data-driven hypotheses',
+      'c2-task': 'The «Cloud PBX» product ranks #3 in the market by customer count and #5 by revenue. The market is slowing down (growth of +4.5% in 2024 versus a forecast of +1.5% for 2025), and customer churn is outpacing that slowdown. The task: run a cohort analysis and propose hypotheses for reducing churn.',
+      'c2-did1-li1': '<b>Cohort analysis</b> on 3,271 connections from January–December 2024 (5 regions, observation window through April 2025), a monthly M0–M14 retention matrix',
+      'c2-did1-li2': '<b>Anomaly:</b> the August 2024 cohort — retention 10–15 pp below neighboring months across every horizon',
+      'c2-did2-li1': '<b>Regional breakdown:</b> churn ranging from 48% (East, the benchmark region) to 60% (South, a risk zone)',
+      'c2-did2-li2': '<b>6 data-backed hypotheses</b> (weak onboarding, a one-off August incident, a regional quality gap, no retention program, no early risk scoring, retention economics weaker than acquisition economics) + 3 priority recommendations',
+      'c2-metricsnote': 'The result of analyzing the supplied dataset (3,271 connections) — not a forecast',
+      'c2-metric1-k': 'total product churn in 2024',
+      'c2-metric2-k': 'cohort loss in the first 3 mo.',
+      'c2-metric3-v': '6–7 mo.',
+      'c2-metric3-k': 'median customer lifetime',
+      'c2-metric4-k': 'net customer growth/mo., Feb→Dec 2024',
+      'c2-region-h4': 'Churn by region, 2024',
+      'c2-rbar1-lab': 'East (benchmark)',
+      'c2-rbar2-lab': 'South (risk zone)',
+      'c2-quote': '«You put together the cohort matrix, the underlying aggregates, charts and calculation scripts. The analysis covers retention, connections and disconnections, customer lifetime and regional churn. The conclusions and hypotheses are grounded in the results obtained, and the available observation window is accounted for in later cohorts.»',
+      'c2-otherwise-p': 'I explained the August cohort anomaly with a hypothesis about a one-off onboarding failure, but could not confirm it with support logs — they were not in the source data. In real work, the first step would be a joint investigation with support over the tickets, rather than prioritizing hypotheses without them.',
+      'c2-materials-li1-name': 'Presentation, data, calculations and dashboard',
+      'c2-materials-li2': 'Original presentation (11 slides)',
+
+      'c3-h3': 'RBC — a feature to grow the authorized audience',
+      'c3-role': 'Role: Product Manager · A product solution to grow the share of authorized users',
+      'c3-tag-benchmark': 'Competitive benchmark',
+      'c3-task': 'As a news site, RBC has a low share of authorized audience — most readers are anonymous and do not return deliberately. The task: find the bottleneck in the authorization funnel and propose features that measurably grow the authorized audience.',
+      'c3-did1-li1': '<b>Product diagnosis:</b> analyzing the limits of the current authorization flow, pinpointing the funnel bottleneck',
+      'c3-did1-li2': '<b>Competitive benchmark</b> of Russian and international media — the authorization and retention mechanics used by market leaders',
+      'c3-did2-li1': '<b>A feature set for the task:</b> for each one — the user motivation and the «acquisition → capture → retention» logic',
+      'c3-did2-li2': '<b>Finding acquisition points:</b> invite channels found by analyzing partner media sites',
+      'c3-idea-h4': 'Key idea',
+      'c3-idea-p': 'Repositioning RBC from a «news site» to a «personal work tool» — a feature set that gently guides an anonymous reader toward linking an account and builds a habit of daily use, rather than a one-off news read.',
+      'c3-quote': '«Overall the work is done well, the problems were identified correctly, and the ideas solve them. There is a real understanding of retention mechanics and daily-use habits. The idea of turning RBC from a news site into a personal work tool is especially strong.»',
+      'c3-cite': 'A growth area was flagged: the proposed features are missing success metrics — noting this honestly as an open item in the case rather than filling it in after the fact.',
+      'c3-otherwise-p': 'The review already flagged this — the proposed features are missing measurable success metrics. I would have closed that gap at the defense stage: setting a target North Star metric for each feature (for example, % of anonymous readers who link an account within 30 days) and a minimum MDE for an A/B test, before proposing prioritization.',
+      'c3-materials-li1': 'Solution presentation — link temporarily unavailable, being updated',
+
+      'c4-h3': 'OPEN CITY — an MVP platform for brokers',
+      'c4-role': 'Role: Product Manager · Moving the company from an agency model to a digital IT platform',
+      'c4-tag-mvp': 'MVP strategy',
+      'c4-tag-unit': 'Unit economics',
+      'c4-tag-figma': 'Figma prototype',
+      'c4-tag-roadmap': 'Roadmap',
+      'c4-task': 'OPEN CITY runs on a classic agency model: broker earnings are opaque, clients are found manually, and training does not scale. The goal: an app built like a taxi app — a broker opens it, sees «hot» leads and real-time earnings, and works without a schedule or a manager.',
+      'c4-did1-li1': '<b>3 team and budget models:</b> a contractor (₽8–14M / 4–6 mo.), freelancers (₽4.5–8M / 5–8 mo.), an in-house hire (~₽10.5–12.5M / 6–8 mo.)',
+      'c4-did1-li2': '<b>Recommendation:</b> a hybrid model — a contractor builds the MVP while a core team (7 roles, payroll ₽1.59M/mo.) is hired in parallel starting month 3–4',
+      'c4-did2-li1': '<b>MVP prioritization:</b> 6 P0 features (offer and onboarding, subscription payment, hot-leads feed, earnings dashboard, push, training module) + 9 P1/P2 features',
+      'c4-did2-li2': '<b>Data map:</b> 10 sources for assembling the MVP + a clickable 5-screen Figma prototype + a 26-week roadmap with a go/no-go pilot criterion',
+      'c4-metricsnote': 'A budget and timeline estimate + a target pilot criterion — not a measured result',
+      'c4-metric1-v': '26 wk.',
+      'c4-metric1-k': 'pipeline to public launch',
+      'c4-metric2-v': '₽11.13M',
+      'c4-metric2-k': 'core-team payroll before release',
+      'c4-metric3-k': 'brokers close a deal within 8 wk. (pilot criterion)',
+      'c4-quote': '«The presentation has well-argued product proposals; the team, MVP, key data and pipeline are all worked through. The prototype matches the project.»',
+      'c4-otherwise-p': 'I chose the hybrid team model from budget and timeline math, not from a pilot with real brokers. I would first test the concept manually with 5–10 brokers on the current agency model — no development involved — to check whether a «hot leads» feed actually changes their behavior, before committing ₽11M+ to a core team.',
+      'c4-materials-li1': 'Case presentation (13 slides)',
+      'c4-materials-li2': 'Calculations: team/timeline/cost, payroll, MVP scope, roadmap (Excel)',
+      'c4-materials-li3-name': 'Clickable MVP prototype',
+
+      'c5-h3': '«Etazhi» — a recruiting landing page for admin staff',
+      'c5-role': 'Role: Product / UX · Solving a business case for «Etazhi» (Tyumen branch)',
+      'c5-tag-funnel': 'Funnel analysis',
+      'c5-tag-landing': 'Landing page (HTML)',
+      'c5-tag-utm': 'UTM analytics',
+      'c5-task': 'Real-estate developer «Etazhi» gets too few applications for admin and management roles and cannot see which acquisition channels work. The task: a landing page that lifts the number and quality of applications and provides end-to-end analytics.',
+      'c5-did1-li1': '<b>Hiring funnel analysis</b> for Sep–Nov 2024: 92 contacts → 55 leads → 4 hires, an end-to-end conversion of 4.3%, with 47% of leads rejected and a 59% candidate drop-off between contact and invite',
+      'c5-did1-li2': '<b>A 7-stage candidate CJM</b> (awareness → offer) with pain points and a UX fix at every step',
+      'c5-did2-li1': '<b>A heatmap</b> of existing landing pages + a brand book (color, logo, style)',
+      'c5-did2-li2': '<b>The landing page:</b> 5 sections, sticky navigation, job filters by department, modals, a smart form with a phone mask, automatic UTM capture into hidden fields, mobile-responsive',
+      'c5-metricsnote': 'Target figures — a planning model, not a measured result',
+      'c5-metric1-k': 'applications',
+      'c5-metric2-k': 'application-to-hire conversion',
+      'c5-metric3-k': 'end-to-end conversion',
+      'c5-metric4-k': 'channel analytics from day one',
+      'c5-quote': '«The landing page meets the assignment requirements: all the core blocks are implemented, navigation is convenient, and there is an application form. The presentation covers the goals, insights, CJM, the solutions implemented and the reasoning behind each one. Extra credit for the funnel analysis and for tying the solutions back to the problems found.»',
+      'c5-otherwise-p': 'The +10% applications and +10% conversion targets are a funnel-logic estimate, not a measured result: the landing page was built as a training case with no real traffic from «Etazhi». I would run a 2–4 week A/B test against the old version and check the forecast against the actual numbers.',
+      'c5-materials-li1': 'Responsive HTML landing page with UTM tracking and job filters',
+      'c5-materials-li2': 'Case walkthrough presentation (10 slides: goals, funnel, insights, CJM)',
+
+      'did-h4': 'What was done',
+      'otherwise-h4': 'What I would do differently',
+      'materials-h4': 'Materials',
+
+      'exp-eyebrow': 'Background and tools',
+      'exp-h2': 'Technical background and working with AI',
+      'exp-p': 'A year at Yandex tech support and two years as a system administrator — before moving into product, I spent time understanding how the technology actually works underneath. That is on top of how I use AI in the case work itself and on this site.',
+      'exp-work-h4': 'Work experience',
+      'exp-work-li1': '<b>Yandex, technical support operator</b> (2025, 1 year): analyzed patterns in incoming tickets, identified systemic issues and handed them to developers as reproducible scenarios, and shaped structured feedback for product teams — saw product decisions from inside a complex technical product.',
+      'exp-work-li2': '<b>GRIC, IT division of Belarusian Railway, system administrator</b> (2022–2024, 2 years): administered server infrastructure — servers, networks, databases. Built a technical mindset: reads API documentation, understands the SDLC and implementation constraints.',
+      'exp-ai-h4': 'AI in the work',
+      'exp-ai-li1': '<b>Claude / Claude Code</b> — vibe-coding prototypes and working tools, document work. This portfolio site was entirely built and published with Claude.',
+      'exp-ai-li2': '<b>Claude / ChatGPT</b> — market and competitor research, generating and testing hypotheses, drafting BRDs and presentations.',
+      'exp-ai-li3': '<b>Figma AI / Midjourney</b> — visuals and quick prototypes.',
+
+      'dl-eyebrow': 'Full documents',
+      'dl-h2': 'Download the full portfolio',
+      'dl-p': 'The short version — five cases, one page each. The full version — with appendices: research packages, BRDs and presentations in their original form. Plus a resume as a single file.',
+      'dl1-name': 'Short version',
+      'dl1-desc': '5 cases, one page each — task, solution, metrics, expert feedback.',
+      'dl1-meta': '8 pp. · ~0.2 MB · download',
+      'dl2-name': 'Full version with appendices',
+      'dl2-desc': 'Cases + source materials: research, BRDs, presentations in full detail.',
+      'dl2-meta': '82 pp. · ~4.2 MB · download',
+      'dl3-name': 'Resume',
+      'dl3-desc': 'Experience, skills and contacts in one document — for sending out and for ATS.',
+      'dl3-meta': '2 pp. · ~0.1 MB · download',
+
+      'about-eyebrow': 'About me',
+      'about-h2': 'How each case is built',
+      'about-p1': 'The five cases in this portfolio are independent projects done within the ProductStar hands-on «Product Manager 2.0» course. I chose training cases deliberately: it is a way to build product methodology across different industries before my first job in product, rather than waiting for someone to hand me access to real data.',
+      'about-p2': 'Every one followed the same path: from a hypothesis and raw data to a concrete product decision with measurable metrics. None stayed at the idea stage — I deliberately took each case through to a BRD, a prototype, or calculations, and defended it in front of an independent expert.',
+      'about-p3': 'The decisions are grounded in numbers — funnels, cohorts, unit economics — not just feature descriptions. Wherever a review flagged a gap (like the missing success metrics in the RBC case), it is stated as-is, and every case has its own «What I would do differently» block — an honest look at the limitations and how I would close them.',
+      'approach1-at': 'Research before the decision',
+      'approach1-ad': 'Market, competitors, audience and data — before a feature or requirement gets written down.',
+      'approach2-at': 'A decision, not a feature list',
+      'approach2-ad': 'Every idea is explained through user motivation and the acquisition → capture → retention logic.',
+      'approach3-at': 'Calculation instead of assumption',
+      'approach3-ad': 'Pricing, payroll, conversions and cohorts — with numbers that can be checked.',
+      'approach4-at': 'External review',
+      'approach4-ad': 'Every case went through an independent expert defense — the feedback is included in the portfolio unedited.',
+
+      'contact-eyebrow': 'Contact',
+      'contact-h2': 'Open to discussing new product opportunities.',
+      'contact-availability': 'Can start within a week · open to remote roles',
+      'contact-email-label': 'email',
+      'foot-bottom-text': 'Dmitrii Drobyshevsky · Product Manager Portfolio',
+      'theme-toggle-label': 'toggle theme'
+    };
+
+    var cache = {};
+    var btn = document.getElementById('lang-toggle');
+    var htmlEl = document.documentElement;
+    var current = 'ru';
+    var titleRU = document.title;
+    var titleEN = 'Dmitrii Drobyshevsky — Product Manager Portfolio';
+    if(!btn) return;
+
+    function apply(lang){
+      var nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(function(el){
+        var key = el.getAttribute('data-i18n');
+        if(!(key in cache)) cache[key] = el.innerHTML;
+        if(lang === 'en' && EN.hasOwnProperty(key)) el.innerHTML = EN[key];
+        else el.innerHTML = cache[key];
+      });
+      htmlEl.setAttribute('lang', lang === 'en' ? 'en' : 'ru');
+      document.title = lang === 'en' ? titleEN : titleRU;
+      btn.textContent = lang === 'en' ? 'RU' : 'EN';
+      btn.setAttribute('aria-label', lang === 'en' ? 'Switch to Russian' : 'Switch to English');
+      current = lang;
+    }
+
+    btn.addEventListener('click', function(){
+      apply(current === 'ru' ? 'en' : 'ru');
+    });
+  })();
+</script>
+</body>
+</html>
